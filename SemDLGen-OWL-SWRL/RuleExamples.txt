@@ -1,0 +1,66 @@
+
+DLGT:implementedBy(?task, ?struct) ^ task:TaskDomain(?task) -> structure:DLStructure(?struct)
+structure:DLStructure(?struct) -> sqwrl:select(?struct)
+
+DLGT:implementedBy(?task, ?struct) ^ task:TaskDomain(?task) -> DLGT:DLStructure(?struct)
+DLGT:DLStructure(?struct) -> sqwrl:select(?struct)
+
+
+-----
+task1: needSatisfy nfp1, implementedBy cnn1, beMatched fp1
+cnn1: abstract task1, use data1
+data1: hasDataFeature tfidf-esa
+textclassification1: implementedBy cnn1, implementedBy mpn1
+-----
+<Rule 1>
+S1	task:TaskDomain(?task) ^ DLGT:DLStructure(?struct) ^ DLGT:implementedBy(?task, ?struct) ^ DLGT:needSatisfy(?task, ?nfp) ^ DLGT:Data(?data) ^ 
+DLGT:use(?structure, ?data) ^ data:DataFeature(?dfeature) ^ data:hasDataFeature(?data, ?dfeature) -> DLGT:Result(?dfeature)
+S2	DLGT:Result(?dfeature) -> sqwrl:select(?dfeature)	
+
+<Rule 2>
+S1	DLGT:implementedBy(?task, ?struct) ^ task:TaskDomain(?task) -> DLGT:DLStructure(?struct)
+S2 	DLGT:DLStructure(?struct) -> sqwrl:select(?struct)
+
+<Rule 2>
+S1	DLGT:implementedBy(?task, ?struct) ^ task:TaskDomain(?task) -> DLGT:DLStructure(?struct)
+S2	DLGT:DLStructure(?struct) ^ DLGT:needSatisfy(?task, ?nfp) ^ DLGT:Data(?data) ^ DLGT:use(?struct, ?data) -> DLGT:Result(?struct)
+" ^ data:DLInputData(?dfeature) ^ data:hasDataFeature(?data, ?dfeature) -> DLGT:Result(?struct) "
+S3 	DLGT:Result(?srtruct) -> sqwrl:select(?srtruct)
+
+
+<Rule 3>
+S1	DLGT:implementedBy(?task, ?struct) ^ task:TaskDomain(?task) -> DLGT:DLStructure(?struct)
+S2	DLGT:DLStructure(?struct) ^ DLGT:needSatisfy(?task, ?nfp) ^ DLGT:Data(?data) ^ DLGT:use(?struct, ?data)  ^ data:DataFeature(?dfeature) ^ data:hasDataFeature(?data, ?dfeature) -> DLGT:Result(?dfeature)
+S3 	DLGT:Result(?dfeature) -> sqwrl:select(?dfeature)
+===>
+
+S1	DLGT:implementedBy(?task, ?struct) ^ task:TaskDomain(?task) -> DLGT:DLStructure(?struct)	
+S2	DLGT:DLStructure(?struct) ^ task:TaskDomain(?task) ^ property:NFP(?nfp) ^ DLGT:needSatisfy(?task, ?nfp) ^ DLGT:Data(?data) ^ DLGT:use(?struct, ?data) ^ data:DataFeature(?dfeature) ^ data:hasDataFeature(?data, ?dfeature) -> DLGT:Result(?dfeature)	
+S3	DLGT:Result(?dfeature) -> sqwrl:select(?dfeature)	
+
+===>
+
+S2	DLGT:implementedBy(?task, ?struct) ^ task:TaskDomain(?task) ^ DLGT:DLStructure(?struct) ^ property:NFP(?nfp) ^ DLGT:needSatisfy(?task, ?nfp) ^ DLGT:Data(?data) ^ DLGT:use(?struct, ?data) ^ data:DataFeature(?dfeature) ^ data:hasDataFeature(?data, ?dfeature) -> DLGT:Result(?dfeature)
+S3	DLGT:Result(?dfeature) -> sqwrl:select(?dfeature)
+
+-----
+task2: needSatisfy nfp2, implementedBy transformer1, beMatched fp2
+transformer1: abstract task2, use data2
+data2: hasDataFormat sentence-pair
+-----
+S2	DLGT:implementedBy(?task, ?struct) ^ task:TaskDomain(?task) ^ DLGT:DLStructure(?struct) ^ property:NFP(?nfp) ^ DLGT:needSatisfy(?task, ?nfp) ^ DLGT:Data(?data) ^ DLGT:use(?struct, ?data) ^ data:DataFormat(?dformat) ^ -> DLGT:Result(?dformat)
+
+S2	DLGT:implementedBy(DLGT:task2, ?struct) ^ DLGT:DLStructure(?struct) ^ property:NFP(DLGT:nfp2) ^ DLGT:needSatisfy(?task, DLGT:nfp2) ^ DLGT:Data(?data) ^ DLGT:use(?struct, ?data) ^ data:hasDataFormat(?data, ?dformat) ^ data:DataFormat(?dformat) -> DLGT:Result(?dformat)
+S3	DLGT:Result(?dformat) -> sqwrl:select(?dformat)
+
+
+
+-----
+task3: needSatisfy nfp3, implementedBy transformer2, beMatched fp3
+transformer2: abstract task3, use data2
+data2: hasDataFormat sentence-pair
+-----
+S2	DLGT:implementedBy(?task, ?struct) ^ DLGT:DLStructure(?struct) ^ property:NFP(DLGT:nfp3) ^ DLGT:needSatisfy(?task, DLGT:nfp3) ^ DLGT:Data(?data) ^ DLGT:use(?struct, ?data) ^ data:hasDataFormat(?data, ?dformat) ^ data:DataFormat(?dformat) -> DLGT:Result(?struct)
+S3	DLGT:Result(?struct) -> sqwrl:select(?struct)
+
+

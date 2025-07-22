@@ -1,0 +1,352 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/DataOntology#"
+     xml:base="http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/DataOntology"
+     xmlns:data="http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/DataOntology#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/DataOntology"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/DataOntology#hasDataFeature -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/DataOntology#hasDataFeature">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/DataOntology#DataExt"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/DataOntology#DataFeature"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/DataOntology#hasDataFormat -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/DataOntology#hasDataFormat">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/DataOntology#DataExt"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/DataOntology#DataFormat"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/DataOntology#hasDataProcessService -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/DataOntology#hasDataProcessService">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/DataOntology#DataExt"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/DataOntology#DataProcessService"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/DataOntology#hasDataProcessStatus -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/DataOntology#hasDataProcessStatus">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/DataOntology#DataExt"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/DataOntology#DataProcessStatus"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/DataOntology#DLInputData -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/DataOntology#DLInputData">
+        <owl:equivalentClass rdf:resource="http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/DataOntology#ProcessedData"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/DataOntology#DataExt"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/DataOntology#DataExt -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/DataOntology#DataExt"/>
+    
+
+
+    <!-- http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/DataOntology#DataFeature -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/DataOntology#DataFeature">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/DataOntology#DataExt"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/DataOntology#DataFormat -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/DataOntology#DataFormat">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/DataOntology#DataExt"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/DataOntology#DataGenerationService -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/DataOntology#DataGenerationService">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/DataOntology#DataProcessService"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/DataOntology#DataProcessService -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/DataOntology#DataProcessService">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/DataOntology#DataExt"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/DataOntology#DataProcessStatus -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/DataOntology#DataProcessStatus">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/DataOntology#DataExt"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/DataOntology#EnJa-OneHot -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/DataOntology#EnJa-OneHot">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/DataOntology#DataGenerationService"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/DataOntology#ImageDataFeature -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/DataOntology#ImageDataFeature">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/DataOntology#DataFeature"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/DataOntology#ImageDataFormat -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/DataOntology#ImageDataFormat">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/DataOntology#DataFormat"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/DataOntology#Line -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/DataOntology#Line">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/DataOntology#TextDataFormat"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/DataOntology#Lines2TFIDF_ESA -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/DataOntology#Lines2TFIDF_ESA">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/DataOntology#DataGenerationService"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/DataOntology#MultiModalDataFeature -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/DataOntology#MultiModalDataFeature">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/DataOntology#DataFeature"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/DataOntology#MultiModalDataFormat -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/DataOntology#MultiModalDataFormat">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/DataOntology#DataFormat"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/DataOntology#One-Hot -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/DataOntology#One-Hot">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/DataOntology#TextDataFeature"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/DataOntology#ParallelTranslation -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/DataOntology#ParallelTranslation">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/DataOntology#TextDataFormat"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/DataOntology#ProcessedData -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/DataOntology#ProcessedData">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/DataOntology#DataProcessStatus"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/DataOntology#RawData -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/DataOntology#RawData">
+        <owl:equivalentClass rdf:resource="http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/DataOntology#ToBeProcessedData"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/DataOntology#DataExt"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/DataOntology#SignalDataFeature -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/DataOntology#SignalDataFeature">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/DataOntology#DataFeature"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/DataOntology#SignalDataFormat -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/DataOntology#SignalDataFormat">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/DataOntology#DataFormat"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/DataOntology#TFIDF -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/DataOntology#TFIDF">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/DataOntology#TextDataFeature"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/DataOntology#TFIDF-ESA -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/DataOntology#TFIDF-ESA">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/DataOntology#TextDataFeature"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/DataOntology#TextDataFeature -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/DataOntology#TextDataFeature">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/DataOntology#DataFeature"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/DataOntology#TextDataFormat -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/DataOntology#TextDataFormat">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/DataOntology#DataFormat"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/DataOntology#ToBeProcessedData -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/DataOntology#ToBeProcessedData">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/DataOntology#DataProcessStatus"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/DataOntology#Tokenize4Japanese -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/DataOntology#Tokenize4Japanese">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/DataOntology#DataGenerationService"/>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/DataOntology#enja-onehot -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/DataOntology#enja-onehot">
+        <rdf:type rdf:resource="http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/DataOntology#EnJa-OneHot"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/DataOntology#line -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/DataOntology#line">
+        <rdf:type rdf:resource="http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/DataOntology#Line"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/DataOntology#lines2tfidfesa -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/DataOntology#lines2tfidfesa">
+        <rdf:type rdf:resource="http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/DataOntology#Lines2TFIDF_ESA"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/DataOntology#onehot -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/DataOntology#onehot">
+        <rdf:type rdf:resource="http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/DataOntology#One-Hot"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/DataOntology#paralleltranslation -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/DataOntology#paralleltranslation">
+        <rdf:type rdf:resource="http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/DataOntology#ParallelTranslation"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/DataOntology#tfidf -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/DataOntology#tfidf">
+        <rdf:type rdf:resource="http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/DataOntology#TFIDF"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/DataOntology#tfidf-esa -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/DataOntology#tfidf-esa">
+        <rdf:type rdf:resource="http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/DataOntology#TFIDF-ESA"/>
+    </owl:NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.2.8.20170104-2310) https://github.com/owlcs/owlapi -->
+

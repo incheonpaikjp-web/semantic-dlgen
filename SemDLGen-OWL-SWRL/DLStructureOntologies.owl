@@ -1,0 +1,224 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/DLStructureOntology#"
+     xml:base="http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/DLStructureOntology"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/DLStructureOntology"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/DLStructureOntology#BERT -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/DLStructureOntology#BERT">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/DLStructureOntology#TextPreTrain"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/DLStructureOntology#CNN -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/DLStructureOntology#CNN">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/DLStructureOntology#SimpleDLStructure"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/DLStructureOntology#CNN-RNN -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/DLStructureOntology#CNN-RNN">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/DLStructureOntology#ComplexDLStructure"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/DLStructureOntology#ComplexDLStructure -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/DLStructureOntology#ComplexDLStructure">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/DLStructureOntology#DLStructureExt"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/DLStructureOntology#DLStructureExt -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/DLStructureOntology#DLStructureExt"/>
+    
+
+
+    <!-- http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/DLStructureOntology#DropoutRate -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/DLStructureOntology#DropoutRate">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/DLStructureOntology#HyperParameter"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/DLStructureOntology#GAN -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/DLStructureOntology#GAN">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/DLStructureOntology#ComplexDLStructure"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/DLStructureOntology#GPT-2 -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/DLStructureOntology#GPT-2">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/DLStructureOntology#TextPreTrain"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/DLStructureOntology#GPT-3 -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/DLStructureOntology#GPT-3">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/DLStructureOntology#TextPreTrain"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/DLStructureOntology#HyperParameter -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/DLStructureOntology#HyperParameter">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/DLStructureOntology#DLStructureExt"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/DLStructureOntology#ImagePreTrain -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/DLStructureOntology#ImagePreTrain">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/DLStructureOntology#ComplexDLStructure"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/DLStructureOntology#LearningRate -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/DLStructureOntology#LearningRate">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/DLStructureOntology#HyperParameter"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/DLStructureOntology#MPN -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/DLStructureOntology#MPN">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/DLStructureOntology#SimpleDLStructure"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/DLStructureOntology#NoOfEpoch -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/DLStructureOntology#NoOfEpoch">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/DLStructureOntology#HyperParameter"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/DLStructureOntology#NoOfInput -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/DLStructureOntology#NoOfInput">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/DLStructureOntology#HyperParameter"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/DLStructureOntology#NoOfLayer -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/DLStructureOntology#NoOfLayer">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/DLStructureOntology#HyperParameter"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/DLStructureOntology#NoOfOutput -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/DLStructureOntology#NoOfOutput">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/DLStructureOntology#HyperParameter"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/DLStructureOntology#RNN -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/DLStructureOntology#RNN">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/DLStructureOntology#SimpleDLStructure"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/DLStructureOntology#RNN-GRU -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/DLStructureOntology#RNN-GRU">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/DLStructureOntology#RNN"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/DLStructureOntology#RNN-LSTM -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/DLStructureOntology#RNN-LSTM">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/DLStructureOntology#RNN"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/DLStructureOntology#Seq2Seq -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/DLStructureOntology#Seq2Seq">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/DLStructureOntology#ComplexDLStructure"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/DLStructureOntology#SimpleDLStructure -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/DLStructureOntology#SimpleDLStructure">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/DLStructureOntology#DLStructureExt"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/DLStructureOntology#TextPreTrain -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/DLStructureOntology#TextPreTrain">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/DLStructureOntology#ComplexDLStructure"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/DLStructureOntology#Transformer -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/DLStructureOntology#Transformer">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/DLStructureOntology#SimpleDLStructure"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/DLStructureOntology#XLNet -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/DLStructureOntology#XLNet">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/DLStructureOntology#TextPreTrain"/>
+    </owl:Class>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+

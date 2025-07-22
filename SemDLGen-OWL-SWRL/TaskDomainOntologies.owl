@@ -1,0 +1,448 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/TaskDomainOntology#"
+     xml:base="http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/TaskDomainOntology"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/TaskDomainOntology"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/TaskDomainOntology#AdversairalDefence -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/TaskDomainOntology#AdversairalDefence">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/TaskDomainOntology#Adversarial"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/TaskDomainOntology#Adversarial -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/TaskDomainOntology#Adversarial">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/TaskDomainOntology#MultiModalDomain"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/TaskDomainOntology#AdversarialAttack -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/TaskDomainOntology#AdversarialAttack">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/TaskDomainOntology#Adversarial"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/TaskDomainOntology#AtariGame -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/TaskDomainOntology#AtariGame">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/TaskDomainOntology#Games"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/TaskDomainOntology#AudioMusic -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/TaskDomainOntology#AudioMusic">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/TaskDomainOntology#SignalDomain"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/TaskDomainOntology#AudioMusicClassification -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/TaskDomainOntology#AudioMusicClassification">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/TaskDomainOntology#AudioMusic"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/TaskDomainOntology#AudioMusicGeneration -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/TaskDomainOntology#AudioMusicGeneration">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/TaskDomainOntology#AudioMusic"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/TaskDomainOntology#AudioMusicInformationRetrieval -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/TaskDomainOntology#AudioMusicInformationRetrieval">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/TaskDomainOntology#AudioMusic"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/TaskDomainOntology#AudioMusicTagging -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/TaskDomainOntology#AudioMusicTagging">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/TaskDomainOntology#AudioMusic"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/TaskDomainOntology#BrainSegmentation -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/TaskDomainOntology#BrainSegmentation">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/TaskDomainOntology#Medical"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/TaskDomainOntology#BrainTumorSegmentation -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/TaskDomainOntology#BrainTumorSegmentation">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/TaskDomainOntology#Medical"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/TaskDomainOntology#CausalDiscovering -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/TaskDomainOntology#CausalDiscovering">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/TaskDomainOntology#KB"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/TaskDomainOntology#ForeCasting -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/TaskDomainOntology#ForeCasting">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/TaskDomainOntology#TimeSeries"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/TaskDomainOntology#Games -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/TaskDomainOntology#Games">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/TaskDomainOntology#OtherSpecificDomain"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/TaskDomainOntology#GestureRecognition -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/TaskDomainOntology#GestureRecognition">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/TaskDomainOntology#TimeSeries"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/TaskDomainOntology#ImageClassification -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/TaskDomainOntology#ImageClassification">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/TaskDomainOntology#ImageDomain"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/TaskDomainOntology#ImageDomain -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/TaskDomainOntology#ImageDomain">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/TaskDomainOntology#TaskDomain"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/TaskDomainOntology#ImageGeneration -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/TaskDomainOntology#ImageGeneration">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/TaskDomainOntology#ImageDomain"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/TaskDomainOntology#ImageObjectDetection -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/TaskDomainOntology#ImageObjectDetection">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/TaskDomainOntology#ImageDomain"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/TaskDomainOntology#ImagePoseDetection -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/TaskDomainOntology#ImagePoseDetection">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/TaskDomainOntology#ImageDomain"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/TaskDomainOntology#ImageSegmentation -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/TaskDomainOntology#ImageSegmentation">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/TaskDomainOntology#ImageDomain"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/TaskDomainOntology#KB -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/TaskDomainOntology#KB">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/TaskDomainOntology#OtherSpecificDomain"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/TaskDomainOntology#KBCompletion -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/TaskDomainOntology#KBCompletion">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/TaskDomainOntology#KB"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/TaskDomainOntology#KGraph -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/TaskDomainOntology#KGraph">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/TaskDomainOntology#KB"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/TaskDomainOntology#LanguageTranslation -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/TaskDomainOntology#LanguageTranslation">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/TaskDomainOntology#TextDomain"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/TaskDomainOntology#LesionSegmentation -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/TaskDomainOntology#LesionSegmentation">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/TaskDomainOntology#Medical"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/TaskDomainOntology#Medical -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/TaskDomainOntology#Medical">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/TaskDomainOntology#OtherSpecificDomain"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/TaskDomainOntology#MultiModalDomain -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/TaskDomainOntology#MultiModalDomain">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/TaskDomainOntology#TaskDomain"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/TaskDomainOntology#MusicAutoTagging -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/TaskDomainOntology#MusicAutoTagging">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/TaskDomainOntology#AudioMusic"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/TaskDomainOntology#MusicModeling -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/TaskDomainOntology#MusicModeling">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/TaskDomainOntology#AudioMusic"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/TaskDomainOntology#MusicSourceSeparation -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/TaskDomainOntology#MusicSourceSeparation">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/TaskDomainOntology#AudioMusic"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/TaskDomainOntology#OtherSpecificDomain -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/TaskDomainOntology#OtherSpecificDomain">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/TaskDomainOntology#TaskDomain"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/TaskDomainOntology#QuestionAnswer -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/TaskDomainOntology#QuestionAnswer">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/TaskDomainOntology#TextDomain"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/TaskDomainOntology#SentenceGeneration -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/TaskDomainOntology#SentenceGeneration">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/TaskDomainOntology#TextDomain"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/TaskDomainOntology#SentimentAnalysis -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/TaskDomainOntology#SentimentAnalysis">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/TaskDomainOntology#TextDomain"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/TaskDomainOntology#SignalDomain -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/TaskDomainOntology#SignalDomain">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/TaskDomainOntology#TaskDomain"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/TaskDomainOntology#SoundEventDetection -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/TaskDomainOntology#SoundEventDetection">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/TaskDomainOntology#AudioMusic"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/TaskDomainOntology#SpeakerVerification -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/TaskDomainOntology#SpeakerVerification">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/TaskDomainOntology#Speech"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/TaskDomainOntology#Speech -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/TaskDomainOntology#Speech">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/TaskDomainOntology#SignalDomain"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/TaskDomainOntology#SpeechEnhancement -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/TaskDomainOntology#SpeechEnhancement">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/TaskDomainOntology#Speech"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/TaskDomainOntology#SpeechRecognition -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/TaskDomainOntology#SpeechRecognition">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/TaskDomainOntology#Speech"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/TaskDomainOntology#SpeechSynthesis -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/TaskDomainOntology#SpeechSynthesis">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/TaskDomainOntology#Speech"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/TaskDomainOntology#StarCraft -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/TaskDomainOntology#StarCraft">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/TaskDomainOntology#Games"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/TaskDomainOntology#StarCraftII -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/TaskDomainOntology#StarCraftII">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/TaskDomainOntology#Games"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/TaskDomainOntology#TaskDomain -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/TaskDomainOntology#TaskDomain"/>
+    
+
+
+    <!-- http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/TaskDomainOntology#TextClassification -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/TaskDomainOntology#TextClassification">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/TaskDomainOntology#TextDomain"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/TaskDomainOntology#TextDomain -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/TaskDomainOntology#TextDomain">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/TaskDomainOntology#TaskDomain"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/TaskDomainOntology#TextSimplification -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/TaskDomainOntology#TextSimplification">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/TaskDomainOntology#KB"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/TaskDomainOntology#TextSummarization -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/TaskDomainOntology#TextSummarization">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/TaskDomainOntology#Adversarial"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/TaskDomainOntology#TimeSeries -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/TaskDomainOntology#TimeSeries">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/TaskDomainOntology#MultiModalDomain"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/TaskDomainOntology#TimeSeriesClassification -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/TaskDomainOntology#TimeSeriesClassification">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/TaskDomainOntology#TimeSeries"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/TaskDomainOntology#TopicAnalysis -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/TaskDomainOntology#TopicAnalysis">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/TaskDomainOntology#TextDomain"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/TaskDomainOntology#VoiceConversion -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/TaskDomainOntology#VoiceConversion">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/TaskDomainOntology#Speech"/>
+    </owl:Class>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+
