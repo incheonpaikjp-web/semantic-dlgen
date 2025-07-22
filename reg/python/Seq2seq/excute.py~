@@ -1,0 +1,241 @@
+
+from __future__ import print_function
+ 
+from keras.models import Model
+from keras.layers import Input, LSTM, Dense
+import numpy as np
+from keras import backend as K
+ 
+batch_size = 64  # バッチサイズ
+epochs = 100  # エポックサイズ.
+latent_dim = 256  # エンコーディングの次元数
+num_samples = 10000  # サンプル数
+# データファイルのパス
+data_path = '/home/ataka/Documents/rep/python/Seq2seq/jpn.txt'
+ 
+K.clear_session()
+
+
+input_texts = []  #英語のデータ
+target_texts = [] #日本語のデータを格納
+input_characters = set()    #英文に使われている文字の種類
+target_characters = set()   #日本語に使われている文字の種類
+ 
+ 
+with open(data_path, 'r', encoding='utf-8') as f:
+    lines = f.read().split('\n')
+ 
+for line in lines[: min(num_samples, len(lines) - 1)]:
+    splited_text = line.split('\t')
+    input_text = splited_text[0]
+    target_text = splited_text[1]
+    # ターゲット分の開始をタブ「\t」で、終了を改行「\n」で表す。
+    target_text = '\t' + target_text + '\n'
+    input_texts.append(input_text)
+    target_texts.append(target_text)
+    for char in input_text:
+        if char not in input_characters:
+            input_characters.add(char)
+    for char in target_text:
+        if char not in target_characters:
+            target_characters.add(char)
+
+"""
+for i in range(10):
+    print(input_texts[i],":", target_texts[i])
+"""
+
+#ソート
+input_characters = sorted(list(input_characters))
+target_characters = sorted(list(target_characters))
+#インプット（英語）の単語数
+num_encoder_tokens = len(input_characters)
+#アウトプット（日本語）の単語数
+num_decoder_tokens = len(target_characters)
+ 
+#一番長い英文の数
+max_encoder_seq_length = max([len(txt) for txt in input_texts])
+#一番長い日本語分の数
+max_decoder_seq_length = max([len(txt) for txt in target_texts])
+ 
+#print('input_texts:', len(input_texts))
+#print('num_encoder_tokens（英語）:', num_encoder_tokens)
+#print('num_decoder_tokens（日本語）:', num_decoder_tokens)
+#print('max_encoder_seq_length（英語）:', max_encoder_seq_length)
+#print('max_decoder_seq_length（日本語）:', max_decoder_seq_length)
+
+
+
+#英語辞書データの生成
+input_token_index = dict(
+    [(char, i) for i, char in enumerate(input_characters)])
+#日本語辞書データの生成
+target_token_index = dict(
+    [(char, i) for i, char in enumerate(target_characters)])
+
+#ベクトルの入れ物を定義
+#形状は (入力データ数,文章の最大長,トークン数)の3次元
+# (10000, 22, 72) 英語
+# (10000, 32, 1476) 日本語
+encoder_input_data = np.zeros(
+    (len(input_texts), max_encoder_seq_length, num_encoder_tokens),
+    dtype='float32')
+decoder_input_data = np.zeros(
+    (len(input_texts), max_decoder_seq_length, num_decoder_tokens),
+    dtype='float32')
+decoder_target_data = np.zeros(
+    (len(input_texts), max_decoder_seq_length, num_decoder_tokens),
+    dtype='float32')
+
+# インプットデータ（英語）、アウトプットデータ日本語）から1つずつ抽出して
+# 辞書を使ってインデックスに変換して、one-Hot表現に変換
+
+for i, (input_text, target_text) in enumerate(zip(input_texts, target_texts)):
+    for t, char in enumerate(input_text):
+        encoder_input_data[i, t, input_token_index[char]] = 1.
+    for t, char in enumerate(target_text):
+        
+        decoder_input_data[i, t, target_token_index[char]] = 1.
+        if t > 0:
+            # decoder_target_dataは1タイムステップ進んでいるので正解データとしては1ステップ前の位置にセット。
+            decoder_target_data[i, t - 1, target_token_index[char]] = 1.
+
+#print("英語の形状",encoder_input_data.shape)
+#print("日本語の形状",decoder_input_data.shape)
+
+
+
+
+from keras.models import load_model
+encoder_model = load_model('/home/ataka/Documents/rep/python/Seq2seq/encoder_model.h5', compile=False)
+decoder_model = load_model('/home/ataka/Documents/rep/python/Seq2seq/decoder_model.h5', compile=False)
+
+
+
+
+
+
+
+reverse_input_char_index = dict(
+    (i, char) for char, i in input_token_index.items())
+reverse_target_char_index = dict(
+    (i, char) for char, i in target_token_index.items())
+
+
+def decode_sequence(input_seq):
+    # 入力文(input_seq)を与えてencoderから内部状態を取得
+    states_value = encoder_model.predict(input_seq)
+ 
+    # 長さ1の空のターゲットシーケンスを生成
+    target_seq = np.zeros((1, 1, num_decoder_tokens))
+    # ターゲットシーケンスの最初の文字に開始文字であるタブ「\t」を入力
+    target_seq[0, 0, target_token_index['\t']] = 1.
+ 
+    # シーケンスのバッチのサンプリングループ
+    # バッチサイズ1を想定
+    stop_condition = False
+    # 初期値として返答の文字列を空で作成。
+    decoded_sentence = ''
+    while not stop_condition:
+        output_tokens, h, c = decoder_model.predict(
+            [target_seq] + states_value)
+ 
+        # トークンをサンプリングする
+        
+        # argmaxで最大確率のトークンインデックス番号を取得
+        sampled_token_index = np.argmax(output_tokens[0, -1, :])
+        # Index空文字を取得
+        sampled_char = reverse_target_char_index[sampled_token_index]
+        # 返答文字列にサンプリングされた文字を追加
+        decoded_sentence += sampled_char
+ 
+        # 終了条件：最大長に達するか停止文字を見つける。
+        if (sampled_char == '\n' or
+           len(decoded_sentence) > max_decoder_seq_length):
+            stop_condition = True
+ 
+        # ターゲット配列（長さ1）を更新
+        # 長さ1の空のターゲットシーケンスを生成
+        target_seq = np.zeros((1, 1, num_decoder_tokens))
+        #予測されたトークンの値を1にセットし次の時刻の入力にtarget_seqを使う。 
+        target_seq[0, 0, sampled_token_index] = 1.
+ 
+        # 内部状態を更新して次の時刻の入力に使う。
+        states_value = [h, c]
+ 
+    return decoded_sentence
+
+
+import numpy as np
+"""
+for _ in range(10):
+    
+    seq_index = np.random.randint(len(input_texts))
+    #encoderへの入力encoder_input_data（英語）から文章を1つ取得
+    input_seq = encoder_input_data[seq_index: seq_index + 1]
+    #入力文（英語）を日本語に翻訳
+    decoded_sentence = decode_sequence(input_seq)
+    print('-')
+    print('Input sentence:', input_texts[seq_index])
+    print('Decoded sentence:', decoded_sentence)
+"""
+
+
+
+
+#使用できない文字（コーパスにない文字）があったときに無効な文字を判定するために使う。
+def is_invalid(message):
+    is_invalid =False
+    for char in message:
+        if char not in input_characters:
+            is_invalid = True
+    return is_invalid
+ 
+# 文章をone-hot表現に変換する関数
+def sentence_to_vector(sentence):
+    vector = np.zeros((1, max_encoder_seq_length, num_encoder_tokens))
+    for j, char in enumerate(sentence):
+        vector[0][j][input_token_index[char]] = 1
+    return vector
+
+"""
+
+print("英文を入力してください。:")
+ 
+message = ""
+while message != "exit":
+    
+    while True:
+        message = input()
+        if not is_invalid(message):
+            break
+        else:
+            print("英文を入力してください。")
+    vec = sentence_to_vector(message)      
+    response = decode_sequence(vec)
+    print(response)
+
+"""
+
+import sys
+
+args = sys.argv
+"""
+print(len(args))
+print(args[0])
+print(args[1])
+"""
+
+
+
+for i in range(len(args)-1):
+    input_seq = args[i+1]
+    print(input_seq)
+    #decoded_sentence = decode_sequence(args[i+1])
+
+    vec = sentence_to_vector(input_seq)      
+    response = decode_sequence(vec)
+    print('---')
+    print('Input sentence:', args[i+1])
+    print('Decoded sentence:', response)
+    

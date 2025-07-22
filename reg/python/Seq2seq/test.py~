@@ -1,0 +1,15 @@
+from __future__ import print_function
+ 
+from keras.models import Model
+from keras.layers import Input, LSTM, Dense
+import numpy as np
+from keras import backend as K
+ 
+batch_size = 64  # バッチサイズ
+epochs = 100  # エポックサイズ.
+latent_dim = 256  # エンコーディングの次元数
+num_samples = 10000  # サンプル数
+# データファイルのパス
+data_path = 'jpn.txt'
+ 
+K.clear_session()

@@ -1,0 +1,4 @@
+import pickle
+techacademy = ['未経験転職', 'Pythonで人工知能エンジニア', 123456, {'Pyhon': '機械学習'}]
+with open('school.binaryfile', 'wb') as web:
+  pickle.dump(techacademy , web)

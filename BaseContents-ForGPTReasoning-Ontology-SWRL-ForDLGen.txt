@@ -1,0 +1,396 @@
+I. Ontology Keywords:
+
+------------ Start of Ontology and SWRL Keyword Definitions --------------------------
+Followings are explanation about keywords of ontology (OWL: Web Ontology Language).
+1) About "Class" and "Super"/"Sub" relationship of Two "Class"
+There are several keywords in ontology such as "Class", "Property", "Super", "Sub", "Domain", "Range", "Super-Class", "Sub-Class", "Super-Property", "Sub-Property", "AND", "OR", "NOT".
+A "Class" is a Concept that explains a Thing in detail.
+As examples of Class, we can illustrate 'Fruits', 'Apple', 'Banana', 'Vehicle', 'Car', 'Bus', 'Truck'.
+A 'Thing' is the most top Class.
+The keyword "Super" is used to describe a Super concept such as a Super concept of 'Car' is a 'Vehicle'.
+The keyword "Sub" is used to describe a Sub concept such as a Sub concept of a 'Vehicle' is a 'Car'.
+Therefore "Super" and "Sub" are revisible relatively. 
+A "Class" with "Super" concept is "Super-Class" and a "Class" with "Sub" concept is "Sub-Class".
+In summary a 'Vehicle' class is a "Super-Class" of a 'Car' class and a 'Car' class is a "Sub-Class" of a 'Vichle' class.
+In other words, a 'Vehicle' class is a Super Class of a 'Car' class, and a 'Car' class is a Sub Class of a 'Vichle' class.
+Here, a "Class" of Super concept can include  any Class of Sub concept.
+That can be described as [A Sub "Class" is a Super "Class"].
+As an example, a 'Car' (Sub class of a 'Vehicle') is a 'Vehicle' (Super class of a 'Car').
+
+
+2) About "Property" and Triple.
+Let's consider that a set of triple: <source Class> <Property> <target Class>, and we can say "Class-A" "Property" "Class-B".
+We say it as a simple Class axiom.
+A Propery is a relationship between two "Class". Its form is that "Class-A" "Property" "Class-B", that means "Class-A" has relationship of "Property" with "Class-B".
+For example, there is a Drive relationship between a Human "Class" and Car "Class", where we say the Drive relationship as "Property".
+Therefore, we can express that a Human ("Class") Drive ("Property") a Car ("Class"), and it means that a Human Drive a Car.
+This can be expressed inversible using the passive form, and it can be described as "A Car is driven by a Human.".
+As another example, about a "Property" about FlowInto, it can be illustrated as follow.
+A 'River' ("Class") 'FlowInto'("Property") A 'Sea' ("Class").
+Its reversed description is that A 'Sea' is 'FeedBack' from A 'River', where reversed description of 'FlowInto' is 'FeedBack from'. 
+<target Class> can be connected with several classes by logical operator such as "AND" or "OR".
+As an example, A 'Balalaika'("Class")  'subMaterial' ("Peroperty") 'WhiteCuracao' ("Class") "AND" 'LemonJuice'("Class").
+
+3) About "Domain" and "Range"
+Let's consider a triple, <source "Class"> <"Property"> <target "Class">.
+Here, the <source "Class"> is a "Domain" class, and the <target "Class"> is a "Range" class.
+For an example, in a triple <'Human' 'Drive' 'Car'>, "Domain" class is 'Human' and "Range" class is 'Car'.
+A "Domain" class can include all "Sub-Class" of the "Domain" Class. 
+As a same fashion, A "Range" class can incude all "Sub-Class" of the "Class" of "Range".
+As an illustration, in the triple, 'Human' 'Drive' 'Car', "Domain" class is 'Human' and "Range" class is 'Car'. 
+Here, "Class" 'Man' is "Sub-Class" of 'Human' ("Domain" class), and a "Class" 'SportsCar' is a "Sub-Class" of 'Car' ("Range" class).
+Then, "'Man' "Drive" 'SportsCar'" can be inferred logically from the original definition <'Human' 'Drive' 'Car'>.
+
+4) About Rule
+A rule is defined a condition (we say "Antecedent") and a conclusion (we say "Consequent") that will be accomplished when the condition is satisfied.
+So, a rule can be defined as follows:
+"If" "Antecedent", "Then" "Consequent".
+The "Antecedent" consists of one or one more triples that are conjuncted by "AND" or "OR".
+An example of "Antecedent" with one triple: 'Cocktail' 'mainMaterial' 'Walker'.
+An example of "Antecedent" with two triples: 'Cocktail' 'mainMaterial' 'Walker' "AND" 'Cocktail' subMaterial 'LemonJuice'.
+The "Consequent" consists of one triple that means consequence.
+An example of "Consequent": 'Cocktail' 'is' 'Balalaika'.
+Therefore, an example of full description of a rule: "If" 'Cocktail' 'mainMaterial' 'Walker' "AND" 'Cocktail' subMaterial 'LemonJuice' "Then" 'Cocktail' 'is' 'Balalaika'.
+This rule can be described simply as follows: "If Cocktail mainMaterial Walker AND Cokcktail subMaterial LemonJuice, Then Cocktail is Balaika."
+And its natural language style's description is that "if a cocktail consists of Walker as a mainMaterial and LeomnJuice as a subMaterial, then the cocktail is Balaka.".
+
+5) About Class Instance
+An "Instance" of A "Class" is a real object (instance) of the "Class".
+This is very similar to the concept of classes and objects in Java programming language.
+Just as a class in a Java is defined and the what were created as instances of that class are objects, instances are defined as actual objects of classes in an ontology.
+A "Class" can have multiple instances (objects).
+The followings are examples of class and its instance.
+"Instance" of a 'Balalaika' "Class" are 'blk1', 'blk2', and 'blk3'.
+
+6) About Inference on the Class and Instance
+Inference is to reason a coclusion based on a set of rules and instances to satisfy logic of the rules and the instances.
+For example:
+- Rule: "If" 'Cocktail' 'mainMaterial' 'Walker' "AND" 'Cocktail' 'subMaterial' 'LemonJuice' "Then" 'Cocktail' 'is' 'Balalaika'.
+- Instance:
+"Instance" of a 'Walker' "Class" are 'wlk1', 'wlk2'.
+"Instance" of a 'LemonJuice' "Class" are 'lmj1', 'lmj2'.
+"Instance" of a 'OrangeJuice' "Class" are 'orj1', 'orj2'.
+"Instance" of a 'Balalaika' "Class" are 'blk1', 'blk2', and 'blk3'.
+
+7) About Axiom of Instance
+As like a Triple, a simple class axiom, we can define instance axiom on the intances as below.
+'blk1' 'mainMaterial' 'wlk1' "AND" 'subMaterial' 'lmj1.
+It means that "Instance" of a "Class" 'Balalaika', 'blk1' has 'wlk1' (instance of 'Walker') and has 'lmj1' (instance of 'LemonJuice').
+
+===========================================  Start of Our Ontology for Deep Learning Generation ===============================
+*** Classes, instances and rules for Deep Learning Generation Ontology
+There are seven Top Level Ontology "Class": 'DLGOntology', 'DLArchitecture', 'Task', 'Goal', 'GoalProperty','Result', 'Data' 
+--- (1) Top Level Ontology ---
+For the top level ontolgy, we define "Class" set is as follow:
+'DLGOntology', 'DLArchitecture', 'Task', 'Goal', 'GoalProperty', 'GoalDescription', 'Result', 'Data', 'FP', 'NFP', 'Task'
+
+A 'DLGOntology' class  'generate' 'Result' class.
+A 'DLGOntology' class  'learn' 'Data' class.
+A 'DLGOntology' class  'construct' 'DLArchitecture' class.
+A 'DLGOntology' class  'achieve' 'Goal' class.
+A 'DLArchitecture' class  'use' 'Data' class.
+A 'DLArchitecture' class  'satisfy' 'FP' class.
+A 'DLArchitecture' class  'satisfy' 'NFP' class.
+A 'Task' class  'implementedBy' 'DLArchitecture' class.
+
+A 'DLGOntology' class is a "Sub-Class" of a  'Thing ' class.
+A 'Goal' class is a "Sub-Class" of a  'Thing ' class.
+A 'Result' class is a "Sub-Class" of a  'Thing ' class.
+A 'Data' class is a "Sub-Class" of a  'Thing ' class.
+A 'DLArchitecture' class is a "Sub-Class" of a  'Thing ' class.
+A 'GoalDescription' class is a "Sub-Class" of a  'Goal ' class.
+A 'Task' class is a "Sub-Class" of a  'FP' class.
+A 'FP' class is a "Sub-Class" of a  'GoalDescription' class.
+A 'NFP' class is a "Sub-Class" of a  'GoalDescription' class.
+
+--- (2) Goal Class Ontology ---
+For the 'GoalProperty' class ontolgy, we define "Class" set is as follow:
+'2', '3', '4', 'Accuracy', 'BLEU', 'DateRelatedValue', 'DateSize', 'DomainDistance', 'English', 'FP', 'Far', 'GoalExt', 'High', 'InputLanguage', 'Japanese', 'Language', 'LanguageType', 'Large', 'LearningTime', 'Low', 'Medium', 'ModelRelatedValue', 'NFP', 'NFPValue', 'Near', 'NoOfClass', 'NonModelRelatedValue', 'OutputLanguage', 'Property', 'Short', 'Small'
+
+
+A 'NFP' class  'hasValue' 'NFPValue' class.
+
+--
+A 'FP' class is a "Sub-Class" of a 'GoalProperty' class.
+A 'LanguageType' class is a "Sub-Class" of a 'GoalProperty' class.
+A 'English' class is a "Sub-Class" of a 'LanguageType' class.
+A 'Japanese' class is a "Sub-Class" of a 'LanguageType' class.
+
+A 'NFP' class is a "Sub-Class" of a 'GoalProperty' class.
+A 'NFPValue' class is a "Sub-Class" of a 'NFP' class.
+A 'DateRelatedValue' class is a "Sub-Class" of a 'NFPValue' class.
+A 'DateSize' class is a "Sub-Class" of a 'DateRelatedValue' class.
+A 'Large' class is a "Sub-Class" of a 'DateSize' class.
+A 'Small' class is a "Sub-Class" of a 'DateSize' class.
+
+A 'ModelRelatedValue' class is a "Sub-Class" of a 'NFPValue' class.
+A 'Accuracy' class is a "Sub-Class" of a 'ModelRelatedValue' class.
+A 'High' class is a "Sub-Class" of a 'Accuracy' class.
+A 'Low' class is a "Sub-Class" of a 'Accuracy' class.
+A 'Medium' class is a "Sub-Class" of a 'Accuracy' class.
+A 'BLEU' class is a "Sub-Class" of a 'ModelRelatedValue' class.
+A 'LearningTime' class is a "Sub-Class" of a 'ModelRelatedValue' class.
+A 'Short' class is a "Sub-Class" of a 'LearningTime' class.
+
+A 'NonModelRelatedValue' class is a "Sub-Class" of a 'NFPValue' class.
+A 'DomainDistance' class is a "Sub-Class" of a 'NonModelRelatedValue' class.
+A 'Far' class is a "Sub-Class" of a 'DomainDistance' class.
+A 'Near' class is a "Sub-Class" of a 'DomainDistance' class.
+A 'Language' class is a "Sub-Class" of a 'NonModelRelatedValue' class.
+A 'InputLanguage' class is a "Sub-Class" of a 'Language' class.
+A 'OutputLanguage' class is a "Sub-Class" of a 'Language' class.
+A 'NoOfClass' class is a "Sub-Class" of a 'NonModelRelatedValue' class.
+A '2' class is a "Sub-Class" of a 'NoOfClass' class.
+A '3' class is a "Sub-Class" of a 'NoOfClass' class.
+A '4' class is a "Sub-Class" of a 'NoOfClass' class.
+
+--- (3) DLStructure Class Ontology ---
+For the 'DLStructure' class ontolgy, we define "Class" set is as follow:
+'BERT', 'CNN', 'CNN-RNN', 'ComplexDLStructure', 'DLGOntology', 'DLStructure', 'DLStructureExt', 'DLTask', 'DropoutRate', 'GAN', 'GPT-2', 'GPT-3', 'HyperParameter', 'ImagePreTrain', 'LearningRate', 'MPN', 'NoOfEpoch', 'NoOfInput', 'NoOfLayer', 'NoOfOutput', 'RNN', 'RNN-GRU', 'RNN-LSTM', 'Seq2Seq', 'SimpleDLStructure', 'TextPreTrain', 'Transformer', 'XLNet'
+
+A 'ComplexDLStructure' class is a "Sub-Class" of a 'DLStructure' class.
+A 'CNN-RNN' class is a "Sub-Class" of a 'ComplexDLStructure' class.
+A 'GAN' class is a "Sub-Class" of a 'ComplexDLStructure' class.
+A 'ImagePreTrain' class is a "Sub-Class" of a 'ComplexDLStructure' class.
+A 'Seq2Seq' class is a "Sub-Class" of a 'ComplexDLStructure' class.
+A 'TextPreTrain' class is a "Sub-Class" of a 'ComplexDLStructure' class.
+A 'MLLM-GPT' class is a "Sub-Class" of a 'ComplexDLStructure' class.
+A 'BERT' class is a "Sub-Class" of a 'TextPreTrain' class.
+A 'GPT-2' class is a "Sub-Class" of a 'TextPreTrain' class.
+A 'GPT-3' class is a "Sub-Class" of a 'TextPreTrain' class.
+A 'XLNet' class is a "Sub-Class" of a 'TextPreTrain' class.
+A 'HyperParameter' class is a "Sub-Class" of a 'DLStructureExt' class.
+A 'DropoutRate' class is a "Sub-Class" of a 'HyperParameter' class.
+A 'LearningRate' class is a "Sub-Class" of a 'HyperParameter' class.
+A 'NoOfEpoch' class is a "Sub-Class" of a 'HyperParameter' class.
+A 'NoOfInput' class is a "Sub-Class" of a 'HyperParameter' class.
+A 'NoOfLayer' class is a "Sub-Class" of a 'HyperParameter' class.
+A 'NoOfOutput' class is a "Sub-Class" of a 'HyperParameter' class.
+A 'SimpleDLStructure' class is a "Sub-Class" of a 'DLStructureExt' class.
+A 'CNN' class is a "Sub-Class" of a 'SimpleDLStructure' class.
+A 'MPN' class is a "Sub-Class" of a 'SimpleDLStructure' class.
+A 'RNN' class is a "Sub-Class" of a 'SimpleDLStructure' class.
+A 'RNN-GRU' class is a "Sub-Class" of a 'RNN' class.
+A 'RNN-LSTM' class is a "Sub-Class" of a 'RNN' class.
+A 'Transformer' class is a "Sub-Class" of a 'SimpleDLStructure' class.
+
+--- (4) Data Class Ontology ---
+For the 'Data' class ontolgy, we define "Class" set is as follow:
+'DLInputData', 'Data', 'DataFeature', 'DataFormat', 'DataGenerationService', 
+'DataProcessService', 'DataProcessStatus', 'EnJa-OneHot', 'ImageDataFeature', 'ImageDataFormat', 
+'Lines2TFIDF_ESA', 'MultiModalDataFeature', 'MultiModalDataFormat', 'One-Hot', 'ProcessedData', 
+'RawData', 'SignalDataFeature', 'SignalDataFormat', 'TFIDF', 'TFIDF-ESA', 'TextDataFeature', 
+'TextDataFormat', 'ToBeProcessedData', 'Tokenize4Japanese'
+
+A 'DataFeature' class is a "Sub-Class" of a 'Data' class.
+A 'ImageDataFeature' class is a "Sub-Class" of a 'DataFeature' class.
+A 'MultiModalDataFeature' class is a "Sub-Class" of a 'DataFeature' class.
+A 'SignalDataFeature' class is a "Sub-Class" of a 'DataFeature' class.
+A 'TextDataFeature' class is a "Sub-Class" of a 'DataFeature' class.
+A 'One-Hot' class is a "Sub-Class" of a 'TextDataFeature' class.
+A 'TFIDF' class is a "Sub-Class" of a 'TextDataFeature' class.
+A 'TFIDF-ESA' class is a "Sub-Class" of a 'TextDataFeature' class.
+A 'BERT-EMBD' class is a "Sub-Class" of a 'TextDataFeature' class.
+A 'ChatGPT-EMBD' class is a "Sub-Class" of a 'TextDataFeature' class.
+A 'GIF-FORM' class is a "Sub-Class" of a 'ImageDataFeature' class.
+A 'DataFormat' class is a "Sub-Class" of a 'DataExt' class.
+A 'ImageDataFormat' class is a "Sub-Class" of a 'DataFormat' class.
+A 'MultiModalDataFormat' class is a "Sub-Class" of a 'DataFormat' class.
+A 'SignalDataFormat' class is a "Sub-Class" of a 'DataFormat' class.
+A 'TextDataFormat' class is a "Sub-Class" of a 'DataFormat' class.
+A 'DataProcessService' class is a "Sub-Class" of a 'DataExt' class.
+A 'DataGenerationService' class is a "Sub-Class" of a 'DataProcessService' class.
+A 'EnJa-OneHot' class is a "Sub-Class" of a 'DataGenerationService' class.
+A 'Lines2TFIDF_ESA' class is a "Sub-Class" of a 'DataGenerationService' class.
+A 'Tokenize4Japanese' class is a "Sub-Class" of a 'DataGenerationService' class.
+A 'DataProcessStatus' class is a "Sub-Class" of a 'DataExt' class.
+A 'DLInputData' class is a "Sub-Class" of a 'DataProcessStatus' class.
+A 'ProcessedData' class is a "Sub-Class" of a 'DataProcessStatus' class.
+A 'RawData' class is a "Sub-Class" of a 'DataProcessStatus' class.
+A 'ToBeProcessedData' class is a "Sub-Class" of a 'DataProcessStatus' class.
+
+--- (5) TaskDomain Class Ontology ---
+For the 'TaskDomain' class ontolgy, we define "Class" set is as follow:
+'TaskDomain', 'Adversarial', 'AdversarialAttack', 'AdversarialDefence', 'AtariGame', 'AudioMusic', 'AudioMusicClassification', 'AudioMusicGeneration', 'AudioMusicInformationRetrieval', 'AudioMusicTagging', 'BrainSegmentation', 'BrainTumorSegmentation', 'CausalDiscovering', 'ForeCasting', 'Games', 'GestureRecognition', 'ImageClassification', 'ImageDomain', 'ImageGeneration', 'ImageObjectDetection', 'ImagePoseDetection', 'ImageSegmentation', 'KB', 'KBCompletion', 'KGraph', 'LanguageTranslation', 'LesionSegmentation', 'Medical', 'MultiModalDomain', 'MusicAutoTagging', 'MusicModeling', 'MusicSourceSeparation', 'OtherSpecificDomain', 'QuestionAnswer', 'SentenceGeneration', 'SentimentAnalysis', 'SignalDomain', 'SoundEventDetection', 'SpeakerVerification', 'Speech', 'SpeechEnhancement', 'SpeechRecognition', 'SpeechSynthesis', 'StarCraft', 'StarCraftII', 'TaskDomain', 'TextClassification', 'TextDomain', 'TextSimplification', 'TextSummarization', 'TimeSeries', 'TimeSeriesClassification', 'TopicAnalysis', 'VoiceConversion'
+
+A 'ImageDomain' class is a "Sub-Class" of a 'TaskDomain' class.
+A 'ImageClassification' class is a "Sub-Class" of a 'ImageDomain' class.
+A 'ImageGeneration' class is a "Sub-Class" of a 'ImageDomain' class.
+A 'ImageObjectDetection' class is a "Sub-Class" of a 'ImageDomain' class.
+A 'ImagePoseDetection' class is a "Sub-Class" of a 'ImageDomain' class.
+A 'ImageSegmentation' class is a "Sub-Class" of a 'ImageDomain' class.
+
+A 'MultiModalDomain' class is a "Sub-Class" of a 'TaskDomain' class.
+A 'Adversarial' class is a "Sub-Class" of a 'MultiModalDomain' class.
+A 'AdversarialDefence' class is a "Sub-Class" of a 'Adversarial' class.
+A 'AdversarialAttack' class is a "Sub-Class" of a 'Adversarial' class.
+A 'TextSummarization' class is a "Sub-Class" of a 'MultiModalDomain' class.
+A 'TimeSeries' class is a "Sub-Class" of a 'MultiModalDomain' class.
+A 'ForeCasting' class is a "Sub-Class" of a 'TimeSeries' class.
+A 'GestureRecognition' class is a "Sub-Class" of a 'TimeSeries' class.
+A 'TimeSeriesClassification' class is a "Sub-Class" of a 'TimeSeries' class.
+
+A 'OtherSpecificDomain' class is a "Sub-Class" of a 'TaskDomain' class.
+A 'Games' class is a "Sub-Class" of a 'OtherSpecificDomain' class.
+A 'AtariGame' class is a "Sub-Class" of a 'Games' class.
+A 'StarCraft' class is a "Sub-Class" of a 'Games' class.
+A 'StarCraftII' class is a "Sub-Class" of a 'Games' class.
+A 'KB' class is a "Sub-Class" of a 'OtherSpecificDomain' class.
+A 'CausalDiscovering' class is a "Sub-Class" of a 'KB' class.
+A 'KBCompletion' class is a "Sub-Class" of a 'KB' class.
+A 'KGraph' class is a "Sub-Class" of a 'KB' class.
+A 'TextSimplification' class is a "Sub-Class" of a 'KB' class.
+A 'Medical' class is a "Sub-Class" of a 'OtherSpecificDomain' class.
+A 'BrainSegmentation' class is a "Sub-Class" of a 'Medical' class.
+A 'BrainTumorSegmentation' class is a "Sub-Class" of a 'Medical' class.
+A 'LesionSegmentation' class is a "Sub-Class" of a 'Medical' class.
+
+A 'SignalDomain' class is a "Sub-Class" of a 'TaskDomain' class.
+A 'AudioMusic' class is a "Sub-Class" of a 'SignalDomain' class.
+A 'AudioMusicClassification' class is a "Sub-Class" of a 'AudioMusic' class.
+A 'AudioMusicGeneration' class is a "Sub-Class" of a 'AudioMusic' class.
+A 'AudioMusicInformationRetrieval' class is a "Sub-Class" of a 'AudioMusic' class.
+A 'AudioMusicTagging' class is a "Sub-Class" of a 'AudioMusic' class.
+A 'MusicAutoTagging' class is a "Sub-Class" of a 'AudioMusic' class.
+A 'MusicModeling' class is a "Sub-Class" of a 'AudioMusic' class.
+A 'MusicSourceSeparation' class is a "Sub-Class" of a 'AudioMusic' class.
+A 'SoundEventDetection' class is a "Sub-Class" of a 'AudioMusic' class.
+A 'Speech' class is a "Sub-Class" of a 'SignalDomain' class.
+A 'SpeakerVerification' class is a "Sub-Class" of a 'Speech' class.
+A 'SpeechEnhancement' class is a "Sub-Class" of a 'Speech' class.
+A 'SpeechRecognition' class is a "Sub-Class" of a 'Speech' class.
+A 'SpeechSynthesis' class is a "Sub-Class" of a 'Speech' class.
+A 'VoiceConversion' class is a "Sub-Class" of a 'Speech' class.
+
+A 'TextDomain' class is a "Sub-Class" of a 'TaskDomain' class.
+A 'LanguageTranslation' class is a "Sub-Class" of a 'TextDomain' class.
+A 'QuestionAnswer' class is a "Sub-Class" of a 'TextDomain' class.
+A 'SentenceGeneration' class is a "Sub-Class" of a 'TextDomain' class.
+A 'SentimentAnalysis' class is a "Sub-Class" of a 'TextDomain' class.
+A 'TextClassification' class is a "Sub-Class" of a 'TextDomain' class.
+A 'TopicAnalysis' class is a "Sub-Class" of a 'TextDomain' class.
+
+- There are 32 "Property":
+'achieve', 
+'beMached', 
+'beUsed', 
+'construct', 
+'generate', 
+'hasDataProcessStatus', 
+'hasDataFeature', 
+'hasDataFormat', 
+'hasDataProcessService', 
+'hasDataResult', 
+'hasDataFeatureResult', 
+'hasDataFormatResult', 
+'hasDLStructureResult', 
+'hasHyperParameter', 
+'hasFP', 
+'hasLanguageType', 
+'hasNFP', 
+'hasNFPValue', 
+'hasProperty', 
+'hasHyperParameter', 
+'hasNFPVariable', 
+'hasNFPVariableValue', 
+'relationNFPVariableValue', 
+'requireNFPVariableValue', 
+'implementedBy', 
+'learn', 
+'match', 
+'needSatisfy', 
+'perform', 
+'satisfy', 
+'use', 
+'workWith'
+
+-- Domain and Range Description of the 32 Properties --
+'DLGOntology' 'achieve' 'Goal'.
+'DLTask' 'beMatched' 'FP'.
+'Data' 'beUsed' 'DLStructure'.
+'DLGOntology' 'construct' 'DLStructure'.
+'DLGOntology' 'generate' 'Result'.
+'DataExt' 'hasDataProcessStatus' 'DataProcessStatus'.
+'DataExt' 'hasDataFeature' 'DataFeature'.
+'DataExt' 'hasDataFormat' 'DataFormat'.
+'DataExt' 'hasDataProcessService' 'DataProcessService'.
+'ResultExt' 'hasDataResult' 'DataResult'.
+'DataResult' 'hasDataFeatureResult' 'DataFeatureResult'.
+'DataResult' 'hasDataFormatResult' 'DataFormatResult'.
+'ResultExt' 'hasDLStructureResult' 'DLStructureResult'.
+'ResultExt' 'hasHyperParameter' 'HyperParameterResult'.
+'Property' 'hasFP' 'FP'.
+'Language' 'hasLanguageType' 'LanguageType'.
+'Property' 'hasNFP' 'NFP'.
+'NFP' 'hasNFPValue' 'NFPValue'.
+'Goal' 'hasProperty' 'Property'.
+'NFP' 'hasHyperParameter' 'HyperParameter'.
+'NFP' 'hasNFPVariable' 'NFPVariable'.
+'NFP' 'hasNFPVariableValue' 'NFPVariableValue'.
+'NFPVariable' 'relationNFPVariableValue' 'NFPValue'.
+'NFPVariable' 'requireNFPVariableValue' 'NFPValue'.
+'DLTask' 'implementedBy' 'DLStructure'.
+'DLGOntology' 'learn' 'Data'.
+'FP' 'match' 'DLTask'.
+'DLTask' 'needSatisfy' 'NFP'.
+'DLGOntology' 'perform' 'DLTask'.
+'DLTask' 'satisfy' 'NFP'.
+'DLStructure' 'use' 'Data'.
+'DLTask' 'workWith' 'Data'.
+
+------- Instances -------------
+There are "Instance" as follows:
+'2', '3', '4', 'cnn1', 'cnn2', 'data1', 'data2', 'data3', 'data4', 'data5', 'enja-onehot', 'far', 'fp1', 'fp2', 'high', 'large', 'line', 'lines2tfidfesa', 'low', 'medium', 'mpn1', 'near', 'nfp1', 'nfp2', 'nfp3', 'nfp4', 'nfp5', 'onehot', 'paralleltranslation', 'sentence-pair', 'short', 'small', 'task1', 'task2', 'task3', 'textclassification1', 'tfidf', 'tfidf-esa', 'transformer1', 'transformer2'
+
+========== For Instance Definition ==========
+"Instance" of a 'NoOfClass' "Class" are '2', '3', '4'.
+"Instance" of a 'CNN' "Class" are 'cnn1', 'cnn2'.
+"Instance" of a 'DLInputData' "Class" are 'data1', 'data2', 'data3', 'data4', 'data5'.
+"Instance" of a 'EnJa-OneHot' "Class" are 'enja-onehot'.
+"Instance" of a 'Far' "Class" are 'far'.
+"Instance" of a 'FP' "Class" are 'fp1', 'fp2'.
+"Instance" of a 'High' "Class" are 'high'.
+"Instance" of a 'Large' "Class" are 'large'.
+"Instance" of a 'Line' "Class" are 'line'.
+"Instance" of a 'Lines2TFIDF_ESA' "Class" are 'lines2tfidfesa'.
+"Instance" of a 'Low' "Class" are 'low'.
+"Instance" of a 'Medium' "Class" are 'medium'.
+"Instance" of a 'Near' "Class" are 'near'.
+"Instance" of a 'MPN' "Class" are 'mpn1'.
+"Instance" of a 'NFP' "Class" are 'nfp1'.
+"Instance" of a 'NFP' "Class" are 'nfp2'.
+"Instance" of a 'NFP' "Class" are 'nfp3'.
+"Instance" of a 'NFP' "Class" are 'nfp4'.
+"Instance" of a 'NFP' "Class" are 'nfp5'.
+"Instance" of a 'One-Hot' "Class" are 'onehot'.
+"Instance" of a 'ParallelTranslation' "Class" are 'paralleltranslation', 'sentence-pair'.
+"Instance" of a 'Short' "Class" are 'short'.
+"Instance" of a 'Small' "Class" are 'small'.
+"Instance" of a 'DLTask' "Class" are 'task1', 'task2', 'task3', 'task4', 'task5'.
+"Instance" of a 'TextClassification' "Class" are 'textclassification1'.
+"Instance" of a 'MLLM-GPT' "Class" is 'chatGpt4'.
+"Instance" of a 'TFIDF' "Class" are 'tfidf'.
+"Instance" of a 'TFIDF-ESA' "Class" are 'tfidf-esa'.
+"Instance" of a 'BERT-EMBD' "Class" are 'bert-embd'.
+"Instance" of a 'ChatGPT-EMBD' "Class" are 'chgpt-embd'.
+"Instance" of a 'GIF-FORM' "Class" are 'gif-form'.
+"Instance" of a 'Transformer' "Class" are 'transformer1', 'transformer2', 'transformer3'.
+
+==========  Axioms for Instances ==========
+'cnn1' 'abstract' 'task1' "AND" 'use' 'data1'.
+'data1' 'hasDataFormat' 'tfidf-esa'.
+'data2' 'hasDataFormat' 'sentence-pair'.
+'data3' 'hasDataFormat' 'gif-form'.
+'data4' 'hasDataFormat' 'bert-embd'.
+'data5' 'hasDataFormat' 'chgpt-embd'.
+
+'nfp1' 'hasNFPValue' 'near' "AND" 'hasNFPValue' 'high'.
+'task1' 'implementedBy' 'cnn1' "AND" 'needSatisfy' 'nfp1' "AND" 'beMatched' 'fp1'.
+'task2' 'implementedBy' 'transformer1' "AND" 'needSatisfy' 'nfp2' "AND" 'beMatched' 'fp2'.
+'task3' 'implementedBy' 'transformer2' "AND" 'needSatisfy' 'nfp3'.
+'task4' 'implementedBy' 'transformer3' "AND" 'needSatisfy' 'nfp4' "AND" 'transformer3' 'use' 'data4' "OR" 'transformer3' 'use' 'data5'.
+'task5' 'implementedBy' 'chatGpt4' "AND" 'needSatisfy' 'nfp5' "AND" 'chatGpt4' 'use' 'data5' "AND" 'chatGpt4' 'use' 'data3'.
+'textclassification1'  'implementedBy' 'cnn2' "AND" 'implementedBy' 'mpn1'.
+'transformer1' 'abstract' 'task2' "AND" 'use' 'data2'.
+'transformer2' 'abstract' 'task3' "AND" 'use' 'data2'.
+============================================== END =============================

@@ -1,0 +1,194 @@
+from __future__ import print_function
+ 
+from keras.models import Model
+from keras.layers import Input, LSTM, Dense
+import numpy as np
+from keras import backend as K
+ 
+batch_size = 64  # バッチサイズ
+epochs = 100  # エポックサイズ.
+latent_dim = 256  # エンコーディングの次元数
+num_samples = 10000  # サンプル数
+# データファイルのパス
+data_path = '/home/ataka/Documents/rep/python/Seq2seq/jpn.txt'
+ 
+K.clear_session()
+
+
+input_texts = []  #英語のデータ
+target_texts = [] #日本語のデータを格納
+input_characters = set()    #英文に使われている文字の種類
+target_characters = set()   #日本語に使われている文字の種類
+ 
+ 
+with open(data_path, 'r', encoding='utf-8') as f:
+    lines = f.read().split('\n')
+ 
+for line in lines[: min(num_samples, len(lines) - 1)]:
+    splited_text = line.split('\t')
+    input_text = splited_text[0]
+    target_text = splited_text[1]
+    # ターゲット分の開始をタブ「\t」で、終了を改行「\n」で表す。
+    target_text = '\t' + target_text + '\n'
+    input_texts.append(input_text)
+    target_texts.append(target_text)
+    for char in input_text:
+        if char not in input_characters:
+            input_characters.add(char)
+    for char in target_text:
+        if char not in target_characters:
+            target_characters.add(char)
+
+
+for i in range(10):
+    print(input_texts[i],":", target_texts[i])
+
+
+#ソート
+input_characters = sorted(list(input_characters))
+target_characters = sorted(list(target_characters))
+#インプット（英語）の単語数
+num_encoder_tokens = len(input_characters)
+#アウトプット（日本語）の単語数
+num_decoder_tokens = len(target_characters)
+ 
+#一番長い英文の数
+max_encoder_seq_length = max([len(txt) for txt in input_texts])
+#一番長い日本語分の数
+max_decoder_seq_length = max([len(txt) for txt in target_texts])
+ 
+print('input_texts:', len(input_texts))
+print('num_encoder_tokens（英語）:', num_encoder_tokens)
+print('num_decoder_tokens（日本語）:', num_decoder_tokens)
+print('max_encoder_seq_length（英語）:', max_encoder_seq_length)
+print('max_decoder_seq_length（日本語）:', max_decoder_seq_length)
+
+
+
+#英語辞書データの生成
+input_token_index = dict(
+    [(char, i) for i, char in enumerate(input_characters)])
+#日本語辞書データの生成
+target_token_index = dict(
+    [(char, i) for i, char in enumerate(target_characters)])
+
+#ベクトルの入れ物を定義
+#形状は (入力データ数,文章の最大長,トークン数)の3次元
+# (10000, 22, 72) 英語
+# (10000, 32, 1476) 日本語
+encoder_input_data = np.zeros(
+    (len(input_texts), max_encoder_seq_length, num_encoder_tokens),
+    dtype='float32')
+decoder_input_data = np.zeros(
+    (len(input_texts), max_decoder_seq_length, num_decoder_tokens),
+    dtype='float32')
+decoder_target_data = np.zeros(
+    (len(input_texts), max_decoder_seq_length, num_decoder_tokens),
+    dtype='float32')
+
+# インプットデータ（英語）、アウトプットデータ日本語）から1つずつ抽出して
+# 辞書を使ってインデックスに変換して、one-Hot表現に変換
+
+for i, (input_text, target_text) in enumerate(zip(input_texts, target_texts)):
+    for t, char in enumerate(input_text):
+        encoder_input_data[i, t, input_token_index[char]] = 1.
+    for t, char in enumerate(target_text):
+        
+        decoder_input_data[i, t, target_token_index[char]] = 1.
+        if t > 0:
+            # decoder_target_dataは1タイムステップ進んでいるので正解データとしては1ステップ前の位置にセット。
+            decoder_target_data[i, t - 1, target_token_index[char]] = 1.
+
+print("英語の形状",encoder_input_data.shape)
+print("日本語の形状",decoder_input_data.shape)
+
+
+
+# encoderモデルの定義
+# 入力長さは可変のためNone,トークン数=num_encoder_tokensを指定
+encoder_inputs = Input(shape=(None, num_encoder_tokens),name="encoder_input")
+encoder = LSTM(latent_dim, return_state=True,name="encoder_lstm")
+encoder_outputs, state_h, state_c = encoder(encoder_inputs)
+# encoderのアウトプットは不要なため内部状態２つのみを保持
+encoder_states = [state_h, state_c]
+ 
+#decoderの定義
+ 
+decoder_inputs = Input(shape=(None, num_decoder_tokens),name="decoder_input")
+# 初期状態としてencoderから出力された内部状態 encoder_statesセットする。
+decoder_lstm = LSTM(latent_dim, return_sequences=True, return_state=True,name="decoder_lstm")
+# 出力のみを取得
+decoder_outputs, _, _ = decoder_lstm(decoder_inputs,
+                                     initial_state=encoder_states)
+#全結合層を定義しSoftmaxで単語の確率を出力するモデルを定義
+decoder_dense = Dense(num_decoder_tokens, activation='softmax')
+decoder_outputs = decoder_dense(decoder_outputs)
+ 
+# encoder_input_dataとdecoder_input_dataを decoder_target_dataに変換するモデルを定義
+model = Model([encoder_inputs, decoder_inputs], decoder_outputs)
+
+
+
+
+# 学習
+ 
+from keras.callbacks import EarlyStopping 
+# val_lossに改善が見られなくなってから、5エポックで学習は終了
+early_stopping = EarlyStopping(monitor="val_loss", patience=3) 
+ 
+# 多クラス分類なのでcategorical_crossentropyを指定
+model.compile(optimizer='rmsprop', loss='categorical_crossentropy')
+history = model.fit([encoder_input_data, decoder_input_data], decoder_target_data,
+          batch_size=batch_size,
+          epochs=epochs,
+          validation_split=0.2,
+          callbacks=[early_stopping])
+ 
+#モデルの保存
+model.save('s2s.h5')
+
+
+#matplotlib inline
+ 
+#import matplotlib.pyplot as plt
+ 
+loss = history.history['loss']
+val_loss = history.history['val_loss']
+ 
+#plt.plot(np.arange(len(loss)), loss)
+#plt.plot(np.arange(len(val_loss)), val_loss)
+#plt.show()
+
+
+# encoderモデルの定義
+from keras.models import load_model
+model = load_model('s2s.h5', compile=False)
+ 
+#encoder_inputsを入力、出力はencoderの内部状態であるencoder_statesを指定
+#encoder_inputs～ encoder_states間にあるLSTM層は学習済みのものが利用される。
+encoder_model = Model(encoder_inputs, encoder_states)
+ 
+# decoderの定義
+# #形状は中間層と同じlatent_dim=(256,)
+decoder_state_input_h = Input(shape=(latent_dim,))
+decoder_state_input_c = Input(shape=(latent_dim,))
+#内部状態をリスト形式にして1つの変数にする。
+decoder_states_inputs = [decoder_state_input_h, decoder_state_input_c]
+ 
+# 既存の学習済みLSTM層(decoder_lstm)を使用し、初期状態にdecoder_states_inputsを指定
+decoder_outputs, state_h, state_c = decoder_lstm(
+    decoder_inputs, initial_state=decoder_states_inputs)
+# decoderの内部状態２つをリストで結合
+decoder_states = [state_h, state_c]
+ 
+# 既存の学習済み全結合層(decoder_dense)を使用
+decoder_outputs = decoder_dense(decoder_outputs)
+ 
+# リストで結合
+decoder_model = Model(
+    [decoder_inputs] + decoder_states_inputs,
+    [decoder_outputs] + decoder_states)
+ 
+# モデルの保存
+encoder_model.save('encoder_model.h5')
+decoder_model.save('decoder_model.h5')
