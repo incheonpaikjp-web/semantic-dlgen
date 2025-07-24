@@ -1,0 +1,107 @@
+<!-- 
+変数一覧
+
+・教師の有無:
+・タスク:
+・データ:
+・精度:
+・実行時間:
+・ドメイン距離:
+
+ -->
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>User request input page</title>
+<script>
+  var elem = document.getElementById('range');
+  var target = document.getElementById('value');
+  var rangeValue = function (elem, target) {
+    return function(evt){
+      target.innerHTML = elem.value;
+    }
+  }
+  elem.addEventListener('input', rangeValue(elem, target));
+</script>
+<script type="text/javascript" language="javascript">
+    function selectboxChange() {
+      target = document.getElementById("output");
+
+      selindex = document.form1.SelectTask.selectedIndex;
+      switch (selindex) {
+      	case 0:
+      	  target.innerHTML = "Please select a task.<br/>";
+          break;
+        case 1:
+          target.innerHTML = "Option : <br/>Domain Distance : " + 
+          //"<select name=\"nfp1\" id=\"DomainDis\"><option value=\"Near\" selected=\"selected\">Near</option><option value=\"Far\">Far</option><option value=\"null\">I don't know</option>" + 
+          "<select name=\"nfp1\" id=\"DomainDis\"><option value=\"Near\" selected=\"selected\">Near</option><option value=\"Far\">Far</option><option value=\"null\">I don't know</option>" + 
+          "</select><br/>Number of Classes : <select name=\"nfp2\" id=\"ClassNum\"><option value=\"2\" selected=\"selected\">2</option><option value=\"3\">3</option><option value=\"4\">4</option>" + 
+          "</select><br/><label>Accuracy：<input name=\"nfp3\" type=\"range\" value=\"50\" min=\"0\" max=\"100\" oninput=\"document.getElementById('output1').value=this.value\"></label><output id=\"output1\">1</output><br/>";
+          break;
+        
+        case 2:
+          target.innerHTML = "Option : " + 
+          //"<select name=\"nfp1\" id=\"DomainDis\"><option value=\"Near\" selected=\"selected\">Near</option><option value=\"Far\">Far</option><option value=\"null\">I don't know</option>" + 
+          // "<br/>Input Language : <select name=\"nfp1\" id=\"ILan\"><option value=\"Near\" selected=\"selected\">Near</option><option value=\"Far\">Far</option><option value=\"null\">I don't know</option>" + 
+          
+          "<br/>Input Language : <select name=\"nfp1\" id=\"ILang\"><option value=\"null\" selected=\"selected\">----------</option><option value=\"English\">English</option><option value=\"Japanese\">Japanese</option><option value=\"Other\">Other</option></select>" +
+          "<br/>Output Language : <select name=\"nfp2\" id=\"OLang\"><option value=\"null\" selected=\"selected\">----------</option><option value=\"English\">English</option><option value=\"Japanese\">Japanese</option><option value=\"Other\">Other</option></select>" +
+          
+          "<br/>The demand for learning time : <input type=\"radio\" name=\"nfp3\" value=\"hurry\" checked=\"checked\" />In a hurry<input type=\"radio\" name=\"nfp3\" value=\"Do not care about time\" />Do not care about time";
+          
+          //"</select><br/>Number of Classes : <select name=\"nfp2\" id=\"ClassNum\"><option value=\"2\" selected=\"selected\">2</option><option value=\"3\">3</option><option value=\"4\">4</option>" + 
+          //"</select><br/><label>Accuracy：<input name=\"nfp3\" type=\"range\" value=\"50\" min=\"0\" max=\"100\" oninput=\"document.getElementById('output1').value=this.value\"></label><output id=\"output1\">1</output><br/>";
+          break;
+          
+        case 3:
+          target.innerHTML = "Regressionが選択されています。<br/>";
+          break;
+      }
+    }
+  </script>
+</head>
+<body>
+
+<h1>User request input page</h1>
+Please inputs properties<p>
+
+<!-- <form name="form1" action="OntDLGServlet" method="get" enctype="multipart/form-data"> -->
+<form name="form1" action="OntDLGServlet" method="post" enctype="multipart/form-data">
+
+  <div>
+
+	Presence of correct answer label :
+    <input type="radio" name="fp1" value="SupervizedLearning" checked="checked" />Supervized learning
+	<input type="radio" name="fp1" value="unsuperL" />Unsupervized learning
+
+  </div>
+  <div>
+
+	Task :
+	<select name="fp2" id="SelectTask" onchange="selectboxChange();">
+	<option value="null" selected="selected">----------</option>
+	<option value="Classification">Classification</option>
+	<option value="Translation">Translation</option>
+	<!-- <option value="Regression">Regression</option> -->
+	</select>
+
+  </div>
+  <div>
+
+	<!-- <label for="i_image">Please input your data</label> -->
+	<!-- <input id="i_image" type="file" name="fp3"> -->
+	<!-- <input type="file" name="inputFiles[]" multiple="multiple"> -->
+	Please input your data :
+	<input type="file" name="fp3"/><br />
+
+  </div>
+
+  <div id="output"></div>
+
+  <input type="submit" value="Execute Inference"><p>
+</form>
+
+</body>
+</html>

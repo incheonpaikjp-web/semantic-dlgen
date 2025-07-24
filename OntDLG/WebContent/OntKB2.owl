@@ -1,0 +1,592 @@
+Prefix(xsd:=<http://www.w3.org/2001/XMLSchema#>)
+Prefix(swrlb:=<http://www.w3.org/2003/11/swrlb#>)
+Prefix(owl:=<http://www.w3.org/2002/07/owl#>)
+Prefix(var:=<urn:swrl#>)
+Prefix(var2:=<urn:http://www.w3.org/2003/11/swrl#>)
+Prefix(:=<http://localhost:8090/OntDLG/OntKB2.owl#>)
+Prefix(xml:=<http://www.w3.org/XML/1998/namespace>)
+Prefix(rdf:=<http://www.w3.org/1999/02/22-rdf-syntax-ns#>)
+Prefix(swrl:=<http://www.w3.org/2003/11/swrl#>)
+Prefix(rdfs:=<http://www.w3.org/2000/01/rdf-schema#>)
+Prefix(tutorial:=<http://localhost:8090/OntDLG/OntKB2.owl#>)
+
+
+Ontology(<http://localhost:8090/OntDLG/OntKB2.owl>
+
+Declaration(Class(:Data))
+
+Declaration(Class(:DataProperty))
+SubClassOf(:DataProperty :Data)
+
+Declaration(Class(:DataFeatureProperty))
+SubClassOf(:DataFeatureProperty :DataProperty)
+
+Declaration(Class(:TFIDF))
+SubClassOf(:TFIDF :DataFeatureProperty)
+Declaration(NamedIndividual(:TFIDF))
+ClassAssertion(:TFIDF :TFIDF)
+
+Declaration(Class(:TFIDF-ESA))
+SubClassOf(:TFIDF-ESA :DataFeatureProperty)
+Declaration(NamedIndividual(:TFIDF-ESA))
+ClassAssertion(:TFIDF-ESA :TFIDF-ESA)
+
+Declaration(Class(:One-Hot))
+SubClassOf(:One-Hot :DataFeatureProperty)
+Declaration(NamedIndividual(:One-Hot))
+ClassAssertion(:One-Hot :One-Hot)
+
+
+Declaration(Class(:DataFormatProperty))
+SubClassOf(:DataFormatProperty :DataProperty)
+
+Declaration(Class(:Line))
+SubClassOf(:Line :DataFormatProperty)
+Declaration(NamedIndividual(:Line))
+ClassAssertion(:Line :Line)
+
+Declaration(Class(:ParallelTranslation))
+SubClassOf(:ParallelTranslation :DataFormatProperty)
+Declaration(NamedIndividual(:ParallelTranslation))
+ClassAssertion(:ParallelTranslation :ParallelTranslation)
+
+
+Declaration(Class(:DataTypeByProcessStatus))
+SubClassOf(:DataTypeByProcessStatus :Data)
+
+Declaration(Class(:DLInputData))
+SubClassOf(:DLInputData :DataTypeByProcessStatus)
+
+Declaration(Class(:ProcessedData))
+SubClassOf(:ProcessedData :DataTypeByProcessStatus)
+Declaration(NamedIndividual(:ProcessedData))
+ClassAssertion(:ProcessedData :ProcessedData)
+
+EquivalentClasses(:DLInputData :ProcessedData)
+
+
+Declaration(Class(:RawData))
+SubClassOf(:RawData :DataTypeByProcessStatus)
+
+Declaration(Class(:RawDataProperty))
+SubClassOf(:RawDataProperty :RawData)
+Declaration(NamedIndividual(:RawDataProperty))
+ClassAssertion(:RawDataProperty :RawDataProperty)
+
+
+Declaration(Class(:OutDataGenerationProcess))
+SubClassOf(:OutDataGenerationProcess :Data)
+
+Declaration(Class(:RawData2ProcessedData))
+SubClassOf(:RawData2ProcessedData :OutDataGenerationProcess)
+
+Declaration(Class(:Lines2TFIDF_ESA))
+SubClassOf(:Lines2TFIDF_ESA :RawData2ProcessedData)
+Declaration(NamedIndividual(:Lines2TFIDF_ESA))
+ClassAssertion(:Lines2TFIDF_ESA :Lines2TFIDF_ESA)
+
+
+
+
+Declaration(Class(:DLArchitecture))
+
+Declaration(Class(:CNN))
+SubClassOf(:CNN :DLArchitecture)
+Declaration(NamedIndividual(:CNN))
+ClassAssertion(:CNN :CNN)
+
+DataPropertyAssertion( :hasExecutableProgram :CNN "CNN-TFIDF-se-con.py"^^xsd:string )
+
+Declaration(Class(:MPN))
+SubClassOf(:MPN :DLArchitecture)
+Declaration(NamedIndividual(:MPN))
+ClassAssertion(:MPN :MPN)
+
+
+
+Declaration(Class(:DLComponent))
+
+
+
+
+Declaration(Class(:DLDesignKnowledge))
+
+
+
+
+Declaration(Class(:Goal))
+
+Declaration(Class(:GoalDescription))
+SubClassOf(:GoalDescription :Goal)
+
+Declaration(Class(:FunctionalProperty))
+SubClassOf(:FunctionalProperty :GoalDescription)
+
+Declaration(Class(:Task))
+SubClassOf(:Task :FunctionalProperty)
+Declaration(NamedIndividual(:Task))
+ClassAssertion(:Task :Task)
+
+Declaration(Class(:SupervizedLearning))
+SubClassOf(:SupervizedLearning :Task)
+
+Declaration(Class(:Classification))
+SubClassOf(:Classification :SupervizedLearning)
+
+Declaration(Class(:TextClassification))
+SubClassOf(:TextClassification :Classification)
+Declaration(NamedIndividual(:TextClassification))
+ClassAssertion(:TextClassification :TextClassification)
+
+
+Declaration(Class(:NonFunctionalProperty))
+SubClassOf(:NonFunctionalProperty :GoalDescription)
+
+Declaration(Class(:NFP))
+SubClassOf(:NFP :NonFunctionalProperty)
+Declaration(NamedIndividual(:NFP))
+ClassAssertion(:NFP :NFP)
+
+
+Declaration(Class(:NFPValue))
+SubClassOf(:NFPValue :Goal)
+
+Declaration(Class(:DataRelated))
+SubClassOf(:DataRelated :NFPValue)
+
+Declaration(Class(:DataSize))
+SubClassOf(:DataSize :DataRelated)
+Declaration(NamedIndividual(:DataSize))
+ClassAssertion(:DataSize :DataSize)
+
+Declaration(Class(:Small))
+SubClassOf(:Small :DataSize)
+Declaration(NamedIndividual(:Small))
+ClassAssertion(:Small :Small)
+
+Declaration(Class(:Large))
+SubClassOf(:Large :DataSize)
+Declaration(NamedIndividual(:Large))
+ClassAssertion(:Large :Large)
+
+
+Declaration(Class(:ModelRelated))
+SubClassOf(:ModelRelated :NFPValue)
+
+Declaration(Class(:Accuracy))
+SubClassOf(:Accuracy :ModelRelated)
+Declaration(NamedIndividual(:Accuracy))
+ClassAssertion(:Accuracy :Accuracy)
+
+#high medium low
+
+Declaration(Class(:High))
+SubClassOf(:High :Accuracy)
+Declaration(NamedIndividual(:High))
+ClassAssertion(:High :High)
+
+Declaration(Class(:Medium))
+SubClassOf(:Medium :Accuracy)
+Declaration(NamedIndividual(:Medium))
+ClassAssertion(:Medium :Medium)
+
+Declaration(Class(:Low))
+SubClassOf(:Low :Accuracy)
+Declaration(NamedIndividual(:Low))
+ClassAssertion(:Low :Low)
+
+
+Declaration(Class(:NonModelRelated))
+SubClassOf(:NonModelRelated :NFPValue)
+
+Declaration(Class(:ClassNo))
+SubClassOf(:ClassNo :NonModelRelated)
+Declaration(NamedIndividual(:ClassNo))
+ClassAssertion(:ClassNo :ClassNo)
+
+Declaration(Class(:2))
+SubClassOf(:2 :ClassNo)
+Declaration(NamedIndividual(:2))
+ClassAssertion(:2 :2)
+
+
+Declaration(Class(:DomainDistance))
+SubClassOf(:DomainDistance :NonModelRelated)
+Declaration(NamedIndividual(:DomainDistance))
+ClassAssertion(:DomainDistance :DomainDistance)
+
+Declaration(Class(:Near))
+SubClassOf(:Near :DomainDistance)
+Declaration(NamedIndividual(:Near))
+ClassAssertion(:Near :Near)
+
+Declaration(Class(:Far))
+SubClassOf(:Far :DomainDistance)
+Declaration(NamedIndividual(:Far))
+ClassAssertion(:Far :Far)
+
+
+
+
+
+
+
+Declaration(ObjectProperty(:IsRequired))
+#ObjectPropertyAssertion(:IsRequired :NFP :Near)
+#ObjectPropertyAssertion(:IsRequired :NFP :Accuracy)
+#ObjectPropertyAssertion(:IsRequired :NFP :ClassNo)
+#ObjectPropertyAssertion(:IsRequired :Task :TextClassification)
+
+
+
+Declaration(ObjectProperty(:CanHandle))
+ObjectPropertyAssertion(:CanHandle :CNN :TFIDF-ESA)
+ObjectPropertyAssertion(:CanHandle :CNN :TextClassification)
+ObjectPropertyAssertion(:CanHandle :MPN :TextClassification)
+
+
+
+Declaration(ObjectProperty(:IsComposed))
+ObjectPropertyAssertion(:IsComposed :RawDataProperty :Line)
+
+#Declaration(ObjectProperty(:IsComposed))
+#ObjectPropertyAssertion(:IsComposed :ProcessedData :TFIDF-ESA)
+
+Declaration(ObjectProperty(:IsOutput))
+ObjectPropertyAssertion(:IsOutput :Lines2TFIDF_ESA :TFIDF-ESA)
+
+
+
+
+Declaration(Class(:Result))
+
+Declaration(Class(:DLG))
+SubClassOf(:DLG :Result)
+
+Declaration(Class(:DLComponents))
+SubClassOf(:DLComponents :DLG)
+
+Declaration(Class(:DLProperty))
+SubClassOf(:DLProperty :DLG)
+
+Declaration(Class(:TargetDL))
+SubClassOf(:TargetDL :DLG)
+
+
+Declaration(Class(:DP))
+SubClassOf(:DP :Result)
+
+Declaration(Class(:DLInfo))
+SubClassOf(:DLInfo :DP)
+
+Declaration(Class(:SelectedService))
+SubClassOf(:SelectedService :DP)
+
+
+Declaration(Class(:GU))
+SubClassOf(:GU :Result)
+
+Declaration(Class(:TA))
+SubClassOf(:TA :GU)
+
+Declaration(Class(:TAInfo))
+SubClassOf(:TAInfo :GU)
+
+Declaration(Class(:CandiateArch))
+SubClassOf(:CandiateArch :GU)
+
+
+
+
+
+
+
+
+
+Declaration(Class(:Transformer))
+SubClassOf(:Transformer :DLArchitecture)
+Declaration(NamedIndividual(:Transformer))
+ClassAssertion(:Transformer :Transformer)
+
+Declaration(Class(:Seq2seq))
+SubClassOf(:Seq2seq :DLArchitecture)
+Declaration(NamedIndividual(:Seq2seq))
+ClassAssertion(:Seq2seq :Seq2seq)
+
+ObjectPropertyAssertion(:haveInd :Seq2seq :makeModel.py)
+
+Declaration(Class(:makeModel.py))
+#SubClassOf(:makeModel.py :Seq2seq)
+Declaration(NamedIndividual(:makeModel.py))
+ClassAssertion(:makeModel.py :makeModel.py)
+
+
+
+Declaration(Class(:RNN))
+SubClassOf(:RNN :DLArchitecture)
+Declaration(NamedIndividual(:RNN))
+ClassAssertion(:RNN :RNN)
+
+
+
+
+Declaration(Class(:Translation))
+SubClassOf(:Translation :SupervizedLearning)
+Declaration(NamedIndividual(:Translation))
+ClassAssertion(:Translation :Translation)
+
+
+
+Declaration(Class(:LearningTime))
+SubClassOf(:LearningTime :ModelRelated)
+Declaration(NamedIndividual(:LearningTime))
+ClassAssertion(:LearningTime :LearningTime)
+
+Declaration(Class(:Short))
+SubClassOf(:Short :LearningTime)
+Declaration(NamedIndividual(:Short))
+ClassAssertion(:Short :Short)
+
+
+Declaration(Class(:BLEU))
+SubClassOf(:BLEU :ModelRelated)
+Declaration(NamedIndividual(:BLEU))
+ClassAssertion(:BLEU :BLEU)
+
+
+Declaration(Class(:Language))
+SubClassOf(:Language :NonModelRelated)
+Declaration(NamedIndividual(:Language))
+ClassAssertion(:Language :Language)
+
+Declaration(Class(:InputLang))
+SubClassOf(:InputLang :Language)
+Declaration(NamedIndividual(:InputLang))
+ClassAssertion(:InputLang :InputLang)
+
+Declaration(Class(:OutputLang))
+SubClassOf(:OutputLang :Language)
+Declaration(NamedIndividual(:OutputLang))
+ClassAssertion(:OutputLang :OutputLang)
+
+Declaration(Class(:NL))
+SubClassOf(:NL :Language)
+Declaration(NamedIndividual(:NL))
+ClassAssertion(:NL :NL)
+
+Declaration(Class(:Japanese))
+SubClassOf(:Japanese :NL)
+Declaration(NamedIndividual(:Japanese))
+ClassAssertion(:Japanese :Japanese)
+
+Declaration(Class(:English))
+SubClassOf(:English :NL)
+Declaration(NamedIndividual(:English))
+ClassAssertion(:English :English)
+
+
+
+Declaration(Class(:Tokenize4japaneze))
+SubClassOf(:Tokenize4japaneze :RawData2ProcessedData)
+Declaration(NamedIndividual(:Tokenize4japaneze))
+ClassAssertion(:Tokenize4japaneze :Tokenize4japaneze)
+
+Declaration(Class(:EnJa_OneHot))
+SubClassOf(:EnJa_OneHot :RawData2ProcessedData)
+Declaration(NamedIndividual(:EnJa_OneHot))
+ClassAssertion(:EnJa_OneHot :EnJa_OneHot)
+
+Declaration(ObjectProperty(:haveInd))
+ObjectPropertyAssertion(:haveInd :EnJa_OneHot :makeData.py)
+
+Declaration(Class(:makeData.py))
+#SubClassOf(:makeData.py :EnJa_OneHot)
+Declaration(NamedIndividual(:makeData.py))
+ClassAssertion(:makeData.py :makeData.py)
+
+
+ObjectPropertyAssertion(:CanHandle :Transformer :Translation)
+ObjectPropertyAssertion(:CanHandle :Seq2seq :Translation)
+ObjectPropertyAssertion(:CanHandle :Seq2seq :One-Hot)
+
+#ObjectPropertyAssertion(:CanHandle :Transformer :Short)
+ObjectPropertyAssertion(:CanHandle :RNN :Short)
+
+#ObjectPropertyAssertion(:CanHandle :CNN :TFIDF-ESA)
+
+#ObjectPropertyAssertion(:IsComposed :RawDataProperty :Line)
+
+
+
+
+Declaration(Class(:TestCase))
+Declaration(NamedIndividual(:TestCase))
+ClassAssertion(:TestCase :TestCase)
+
+Declaration(Class(:NeuralNetwork))
+Declaration(NamedIndividual(:NeuralNetwork))
+ClassAssertion(:NeuralNetwork :NeuralNetwork)
+
+
+#       ClassAtom( : Variable(var:))
+#       ObjectPropertyAtom( :IsRequired Variable(var:) Variable(var:) )
+#       ObjectPropertyAtom( :IsComposed Variable(var:) Variable(var:) )
+
+####################################
+# New rule of GU (Classification) #
+####################################
+
+DLSafeRule(
+   Body(
+       ClassAtom( :Task Variable(var:task))
+       ClassAtom( :TextClassification Variable(var:tc))
+       ObjectPropertyAtom( :IsRequired Variable(var:task) Variable(var:tc) )
+
+       ClassAtom( :DLArchitecture Variable(var:arc))
+       ObjectPropertyAtom( :CanHandle Variable(var:arc) Variable(var:tc) )
+
+       )
+   Head(
+       ClassAtom( :TA Variable(var:arc) )
+       )
+)
+
+
+####################################
+# New rule of DP (Classification) #
+####################################
+
+DLSafeRule(
+   Body(
+       ClassAtom( :TextClassification Variable(var:tc))
+       ClassAtom( :NFP Variable(var:nfp))
+       ClassAtom( :Task Variable(var:task))
+       ClassAtom( :Near Variable(var:near))
+       ClassAtom( :Accuracy Variable(var:accuracy))
+       ClassAtom( :High Variable(var:high))
+       ClassAtom( :RawDataProperty Variable(var:rdp))
+       ClassAtom( :Line Variable(var:line))
+       ObjectPropertyAtom( :IsRequired Variable(var:task) Variable(var:tc) )
+       ObjectPropertyAtom( :IsRequired Variable(var:nfp) Variable(var:near) )
+       ObjectPropertyAtom( :IsRequired Variable(var:accuracy) Variable(var:High) )
+       ObjectPropertyAtom( :IsRequired Variable(var:accuracy) Variable(var:Medium) )
+       ObjectPropertyAtom( :IsRequired Variable(var:accuracy) Variable(var:Low) )
+       ObjectPropertyAtom( :IsComposed Variable(var:rdp) Variable(var:line) )
+
+       ClassAtom( :Lines2TFIDF_ESA Variable(var:s))
+       )
+   Head(
+       ClassAtom( :SelectedService Variable(var:s) )
+       )
+)
+
+DLSafeRule(
+   Body(
+       ClassAtom( :Lines2TFIDF_ESA Variable(var:s))
+       ClassAtom( :SelectedService Variable(var:s))
+       )
+   Head(
+       ObjectPropertyAtom(:IsComposed :ProcessedData :TFIDF-ESA)
+   )
+)
+
+
+
+####################################
+# New rule of DLG (Classification) #
+####################################
+
+DLSafeRule(
+   Body(
+       ClassAtom( :TA Variable(var:ta))
+       
+	   ClassAtom( :DataFeatureProperty Variable(var:dfp))
+       ClassAtom( :ProcessedData Variable(var:pd))
+       ObjectPropertyAtom(:IsComposed Variable(var:pd) Variable(var:dfp))
+       ObjectPropertyAtom( :CanHandle Variable(var:ta) Variable(var:dfp) )
+       )
+   Head(
+       ClassAtom( :TargetDL Variable(var:ta) )
+       )
+)
+
+
+
+#################################
+# New rule of GU (Translation) #
+#################################
+DLSafeRule(
+   Body(
+       ClassAtom( :Task Variable(var:t))
+       ClassAtom( :Translation Variable(var:trans))
+       ObjectPropertyAtom( :IsRequired Variable(var:t) Variable(var:trans) )
+
+       ClassAtom( :DLArchitecture Variable(var:a))
+       ObjectPropertyAtom( :CanHandle Variable(var:a) Variable(var:trans) )
+
+       )
+   Head(
+       ClassAtom( :TA Variable(var:a) )
+       )
+)
+
+
+#################################
+# New rule of DP (Translation) #
+#################################
+DLSafeRule(
+   Body(
+       ClassAtom( :Task Variable(var:task))
+       ClassAtom( :Translation Variable(var:trans))
+       ClassAtom( :InputLang Variable(var:ilang))
+       ClassAtom( :English Variable(var:en))
+       ClassAtom( :OutputLang Variable(var:olang))
+       ClassAtom( :Japanese Variable(var:ja))
+       ClassAtom( :EnJa_OneHot Variable(var:EnJa_OneHot))
+       ObjectPropertyAtom( :IsRequired Variable(var:task) Variable(var:trans) )
+       ObjectPropertyAtom( :IsRequired Variable(var:ilang) Variable(var:en) )
+       ObjectPropertyAtom( :IsRequired Variable(var:olang) Variable(var:ja) )
+       )
+   Head(
+       ClassAtom( :SelectedService Variable(var:EnJa_OneHot) )
+       )
+)
+
+DLSafeRule(
+   Body(
+       ClassAtom( :EnJa_OneHot Variable(var:s))
+       ClassAtom( :SelectedService Variable(var:s))
+       )
+   Head(
+       ObjectPropertyAtom(:IsComposed :ProcessedData :One-Hot)
+   )
+)
+
+
+
+#################################
+# New rule of DLG (Translation) #
+#################################
+
+DLSafeRule(
+   Body(
+       ClassAtom( :TA Variable(var:ta))
+
+       ClassAtom( :DataFeatureProperty Variable(var:dfp))
+       ClassAtom( :ProcessedData Variable(var:pd))
+       ObjectPropertyAtom(:IsComposed Variable(var:pd) Variable(var:dfp))
+
+       ObjectPropertyAtom( :CanHandle Variable(var:ta) Variable(var:dfp) )
+       )
+   Head(
+       ClassAtom( :TargetDL Variable(var:ta) )
+       )
+)
+
+
+
+
+
+
+
+)#End of Ontology

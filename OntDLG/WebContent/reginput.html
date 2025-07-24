@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Service registration input page</title>
+
+</head>
+<body>
+
+<h1>Service registration input page</h1>
+Please inputs properties<p>
+
+<form name="form1" action="RegistrationServlet" method="post" enctype="multipart/form-data">
+
+  <div>
+
+	<p>Please describe OWL :<br>
+    <textarea name="owl" cols="100" rows="15">
+Declaration(Class(:))
+SubClassOf(: :)
+Declaration(NamedIndividual(:))
+ClassAssertion(: :)
+
+ObjectPropertyAssertion(:CanHandle : :)
+ObjectPropertyAssertion(:IsComposed : :)
+
+	</textarea></p>
+
+  </div>
+
+  <div>
+
+
+	Please input New Service :
+	<input type="file" name="service"/><br />
+
+
+  </div>
+
+  <div id="output"></div>
+
+  <input type="submit" value="Registration new service"><p>
+</form>
+
+</body>
+</html>
