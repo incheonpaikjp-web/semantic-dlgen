@@ -28,17 +28,3 @@
 "If" a 'TaskDomain' 'implentedBy' a 'DLStructure' "AND" the 'DLStructure' 'use' a 'Data' "AND" the 'Data' 'hasDataFeature' an 'data5' "OR" 'data4' those are "Instance" of 'DataFeature' "AND" the 'dlstructX' that is "Instance" of 'DLStructure' to satisfy the conditions, "Then" what is "Sub-Class" of the 'DLStructure' class?
 (Answer) Transformer, MLLM-GPT
 
------
-본 절에서는 이전에서 보였던 추론의 기본적인 예에 추가하여, 좀 더 추가적인 케이스에 대하여 검증하였다. 실례로 다중 조건과 중첩된 관계를 가진 규칙의 경우에 대해 추론을 수행했을 때 정상적으로 수행함을 확인했다. 그림 에 다중조건을 기본으로 하고 마지막의 경우는 중첩된 관계에 대한 예를 보였다. 
-Prompt 6.4.1의 경우는 어떤 Deep Learning Structure 가 BERT Embedding Code나 혹은 ChatGPT Embedding Code를 데이터로 갖고 있는 경우로 Transformer 구조에서 sentence embedding 를 하는 경우를 질문하는 것이다.
-Prompt 6.4.2의 경우는 어떤 Deep Learning Structure 가 BERT Embedding Code와 ChatGPT Embedding Code의 두 데이터 형식으로 데이터를  갖고 있는 지를 묻는 경우로 현재 해당 인스턴가 없음을 보여 준다.
-Prompt 6.4.3의 경우는 어떤 Deep Learning Structure 가 ChatGPT Embedding Code의 데이터 형식을 사용하는지를 묻고 어떤 실질적인 구조 클래스가 이에 해당하는 지를 묻는 것이다.
-모두 다중 조건과 중첩 관계를 보여주지만 세번째 프로프트가 중첩관계에 잘 동작함을 분명히 보여 준다. 
----
-In this section, we extended the basic inference example shown previously by verifying additional cases. Specifically, we confirmed that inference is performed correctly even for rules involving multiple conditions and nested relationships. The figure illustrates examples based on multiple conditions, and the final case demonstrates a nested relationship.
-
-Prompt 6.4.1 represents a case where a Deep Learning Structure uses either BERT Embedding Code or ChatGPT Embedding Code as data — essentially asking about structures such as Transformers that perform sentence embedding.
-Prompt 6.4.2 asks whether a Deep Learning Structure simultaneously uses both BERT Embedding Code and ChatGPT Embedding Code data formats. The result shows that no such instance currently exists.
-Prompt 6.4.3 queries whether a Deep Learning Structure uses the ChatGPT Embedding Code data format and which specific structural class corresponds to this.
-
-While all three prompts demonstrate multiple conditions and nested relationships, the third prompt clearly shows that the system performs correctly in the case of nested relationships.
