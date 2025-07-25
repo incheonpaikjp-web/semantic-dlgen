@@ -1,3 +1,5 @@
+* The prompts work with default parameters.
+
 - Prompt 1:
 "If" a 'TaskDomain' 'implentedBy' a 'DLStructure' "AND" the 'TaskDomain' 'needStasify' 'nfp3' "AND" the 'DLStructure' 'use' a 'Data' "AND" the 'Data' 'hasDataFeature' an 'dfeatureX' "Instance" of 'DataFeature' "Then" what is the 'dfeatureX to satisfy all "Instance"? 
 ---> sentence-pair
