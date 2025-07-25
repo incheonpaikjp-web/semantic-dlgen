@@ -1,208 +1,64 @@
-INFO  17:19:10  ------------------------------------ Protege -----------------------------------
-   INFO  17:19:10  Protege Desktop
-   INFO  17:19:10  Version 5.5.0, Build 
-   INFO  17:19:10  
-   INFO  17:19:10  
-   INFO  17:19:10  ----------------------------------- Platform -----------------------------------
-   INFO  17:19:10  Java: JVM 1.8.0_121-b13  Memory: 466M
-   INFO  17:19:10  Language: ja, Country: JP
-   INFO  17:19:10  Framework: Apache Software Foundation (1.8) 
-   INFO  17:19:10  OS: windows10 (10.0)
-   INFO  17:19:10  Processor: x86-64
-
-   INFO  17:19:10  
-   INFO  17:19:10  ------------------------------------ Plugins -----------------------------------
-   INFO  17:19:10  Plugin: AOWLN-Tab (0.0.2)
-   INFO  17:19:10  Plugin: Cellfie Protege 5.0+ Plugin (2.1.0)
-   INFO  17:19:10  Plugin: OWL Code Generation Plug-in (2.0.0)
-   INFO  17:19:10  Plugin: Pellet Reasoner Plug-in (2.2.0)
-   INFO  17:19:10  Plugin: CoModIDE (1.1.1)
-   INFO  17:19:10  Plugin: CSV Export Plugin (1.0.0)
-   INFO  17:19:10  Plugin: OWL Hierarchy Protege Plugin (0.1.0)
-   INFO  17:19:10  Plugin: jcel (0.24.0)
-   INFO  17:19:10  Plugin: Existential Query (2.0.0)
-   INFO  17:19:10  Plugin: Explanation Workbench (3.0.0)
-   INFO  17:19:10  Plugin: Ontop OBDA Protégé plugin (4.0.0)
-   INFO  17:19:10  Plugin: Mastro Protégé Plugin (1.1.0)
-   INFO  17:19:10  Plugin: OAF Protege Plugin (1.1.0)
-   INFO  17:19:10  Plugin: OntoGraf (2.0.3)
-   INFO  17:19:10  Plugin: Change Tracker (2.0.2)
-   INFO  17:19:10  Plugin: DL Query (4.0.1)
-   INFO  17:19:10  Plugin: matrix (4.0.1)
-   INFO  17:19:10  Plugin: Ontology Debugger (0.2.2)
-   INFO  17:19:10  Plugin: Individual Properties Contextual Assertions (1.0.2)
-   INFO  17:19:10  Plugin: Properties in the Domain Class View (1.0.1)
-   INFO  17:19:10  Plugin: OWL Difference (6.0.2)
-   INFO  17:19:10  Plugin: OBO Annotations Editor (0.4.0)
-   INFO  17:19:10  Plugin: ELK Reasoner Protege Plug-in (0.4.3)
-   INFO  17:19:10  Plugin: HermiT Reasoner (1.4.3.456)
-   INFO  17:19:10  Plugin: VOWL Plugin (0.1.4.SNAPSHOT)
-   INFO  17:19:10  Plugin: OWLAx Protege 5.0+ Plugin (1.2.0)
-   INFO  17:19:10  Plugin: Browser View (OWLDoc) (3.0.3)
-   INFO  17:19:10  Plugin: OWLViz (5.0.3)
-   INFO  17:19:10  Plugin: OWLAPI RDF Library (3.0.0)
-   INFO  17:19:10  Plugin: ROWL Protege 5.0+ Plugin (1.6.0)
-   INFO  17:19:10  Plugin: SHACL4Protege (1.0.0)
-   INFO  17:19:10  Plugin: snap-sparql-query-plugin (6.0.0)
-   INFO  17:19:10  Plugin: SPARQL Query Plugin (3.0.0)
-   INFO  17:19:10  Plugin: SRE-Tab (0.2.1)
-   INFO  17:19:10  Plugin: SWRLTab Plugin (2.0.8)
-   WARN  17:19:10  Plugin: Factplusplus Plug-in (1.6.5) was not successfully started.  Please see the Protégé log for more details.
-   INFO  17:19:10  
-   INFO  17:19:14  Creating and setting up empty (default) editor kit
-   INFO  17:19:14  OWL API Version: 4.5.9.2019-02-01T07:24:44Z
-   INFO  17:19:14  Loading default configuration parameters for class org.semanticweb.elk.reasoner.config.ReasonerConfiguration
-   INFO  17:19:15  Cannot generate ontology catalog for ontology at http://www.semanticweb.org/inche/ontologies/2025/6/untitled-ontology-4. URI scheme is not "file"
-   INFO  17:19:15  ------------------------------- Auto-update Check ------------------------------
-   INFO  17:19:15  Auto-update last performed: Tue Jul 22 09:53:13 JST 2025
-   INFO  17:19:15  Auto-update has not been performed today.  Running it.
-   INFO  17:19:15  
-   INFO  17:19:15  ------------------------------ Running Auto-update -----------------------------
-   INFO  17:19:15  
-   INFO  17:19:15  --- Searching for plugins ---
-   INFO  17:19:15  Checking https://raw.githubusercontent.com/protegeproject/autoupdate/master/update-info/5.0.0/plugins.repository
-   INFO  17:19:15      Processing https://raw.githubusercontent.com/protegeproject/autoupdate/master/update-info/5.0.0/plugins.repository as a plugin registry
-   INFO  17:19:16          Checking https://raw.githubusercontent.com/protegeproject/cellfie-plugin/master/update-info/protege-5/update.properties
-   INFO  17:19:17          Checking https://gitlab.ifi.uzh.ch/DDIS-Public/chimp-protege-plugin/-/raw/master/update.properties
-   INFO  17:19:18              The plugin document could not be loaded due to a network error: SSLHandshakeException, sun.security.validator.ValidatorException: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
-   INFO  17:19:18              Processing https://gitlab.ifi.uzh.ch/DDIS-Public/chimp-protege-plugin/-/raw/master/update.properties as a plugin registry
-   INFO  17:19:18                  Cannot read plugin registry at https://gitlab.ifi.uzh.ch/DDIS-Public/chimp-protege-plugin/-/raw/master/update.properties.  Reason: sun.security.validator.ValidatorException: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
-   INFO  17:19:18          Checking https://raw.githubusercontent.com/comodide/CoModIDE/master/update.properties
-   INFO  17:19:19          Checking https://raw.githubusercontent.com/co-ode-owl-plugins/change-tracker/master/update-info/protege-5/update.properties
-   INFO  17:19:19          Checking https://raw.githubusercontent.com/protegeproject/csv-export-plugin/master/src/main/resources/update.properties
-   INFO  17:19:19          Checking https://raw.githubusercontent.com/protegeproject/dlquery/master/update-info/protege-5/update.properties
-   INFO  17:19:19          Checking https://raw.githubusercontent.com/protegeproject/autoupdate/master/elk/0.4.3/update.properties
-   INFO  17:19:19          Checking https://raw.githubusercontent.com/protegeproject/existentialquery/master/update-info/protege-5/update.properties
-   INFO  17:19:20          Checking https://bitbucket.org/dtsarkov/factplusplus/downloads/config.autoupdate.Protege-5.0.txt
-   INFO  17:19:21          Checking https://raw.githubusercontent.com/julianmendez/jcel/master/update-info/protege-5/update.properties
-   INFO  17:19:21          Checking https://raw.githubusercontent.com/KITE-Cloud/AOWLN/master/update.properties
-   INFO  17:19:22          Checking http://www.obdasystems.com/sites/default/files/download/plug-in/update.properties
-   INFO  17:19:23              The plugin update document at http://www.obdasystems.com/sites/default/files/download/plug-in/update.properties is not valid.  Reason: No plugin Id given.
-   INFO  17:19:23              Processing http://www.obdasystems.com/sites/default/files/download/plug-in/update.properties as a plugin registry
-   INFO  17:19:23          Checking https://raw.githubusercontent.com/co-ode-owl-plugins/matrix/master/etc/update.matrix.properties
-   INFO  17:19:24          Checking https://raw.githubusercontent.com/protegeproject/ontograf/master/update-info/protege-5/update.properties
-   INFO  17:19:24          Checking http://isbi.aau.at/ontodebug/update.properties
-   INFO  17:19:25          Checking https://kbss.felk.cvut.cz/tools/owlhierarchy/update.properties
-   INFO  17:19:26          Checking https://raw.githubusercontent.com/ontop/ontop/master/protege/plugin/update.properties
-   INFO  17:19:26          Checking https://raw.githubusercontent.com/protegeproject/rdf-library/master/update-info/protege-5/update.properties
-   INFO  17:19:27          Checking https://raw.githubusercontent.com/protegeproject/owl-diff/master/update-info/protege-5/update.properties
-   INFO  17:19:27          Checking https://raw.githubusercontent.com/co-ode-owl-plugins/owldoc/master/update-info/protege-5/update.properties
-   INFO  17:19:27          Checking https://raw.githubusercontent.com/protegeproject/owlviz/master/update-info/protege-5/update.properties
-   INFO  17:19:27          Checking https://raw.githubusercontent.com/Complexible/pellet/master/protege/plugin/plugins.repository
-   INFO  17:19:27              Processing https://raw.githubusercontent.com/Complexible/pellet/master/protege/plugin/plugins.repository as a plugin registry
-   INFO  17:19:27                  Checking https://raw.githubusercontent.com/Complexible/pellet/master/protege/plugin/update.properties
-   INFO  17:19:28          Checking https://raw.githubusercontent.com/protegeproject/autoupdate/master/snap-sparql-query/update-info/protege-5/update.properties
-   INFO  17:19:28          Checking https://raw.githubusercontent.com/KITE-Cloud/SRE/master/update.properties
-   INFO  17:19:28          Checking https://raw.githubusercontent.com/protegeproject/sparql-query-plugin/master/update-info/protege-5/update.properties
-   INFO  17:19:28          Checking https://raw.githubusercontent.com/protegeproject/swrltab-plugin/master/update-info/protege-5/update.properties
-   INFO  17:19:29          Checking https://raw.githubusercontent.com/md-k-sarker/OWLAx/master/update.properties
-   INFO  17:19:29          Checking https://raw.githubusercontent.com/md-k-sarker/ROWL/master/update.properties
-   INFO  17:19:29          Checking https://raw.githubusercontent.com/owlcollab/protege-obo-plugin/master/update.properties
-   INFO  17:19:29  OWL API Version: 4.5.9.2019-02-01T07:24:44Z
-   INFO  17:19:29  Loading default configuration parameters for class org.semanticweb.elk.reasoner.config.ReasonerConfiguration
-   INFO  17:19:29          Checking https://raw.githubusercontent.com/geneontology/protege-taxon-constraints/master/update.properties
-   INFO  17:19:29          Checking https://raw.githubusercontent.com/onor13/odase.protege.plugins.repository/master/odase.plugins.repository
-   INFO  17:19:29              Processing https://raw.githubusercontent.com/onor13/odase.protege.plugins.repository/master/odase.plugins.repository as a plugin registry
-   INFO  17:19:30                  Checking https://raw.githubusercontent.com/onor13/odase.protege.plugin.propertiesInDomainClass/master/update.properties
-   INFO  17:19:30                  Checking https://raw.githubusercontent.com/onor13/odase.protege.plugin.individualPropertiesContextualAssertions/master/update.properties
-   INFO  17:19:30          Checking https://raw.githubusercontent.com/NJITSABOC/oaf-protege/OAFSummarizationPlugin/update-info/protege-5/update.properties
-   INFO  17:19:30          Checking https://raw.githubusercontent.com/fekaputra/shacl-plugin/master/update-info/protege-5/update.properties
-   INFO  17:19:30  
-   INFO  17:20:01  ------------------------------- Loading Ontology -------------------------------
-   INFO  17:20:01  Loading ontology from file:/D:/Awork/01-paper/00-2025/Ontology-DLGen-LLM-Paper-Work/Review-Revision/2ndReview/Semantic-DLGen/SemDLGen-OWL-SWRL/DLG-Top-Ontology.owl
-   INFO  17:20:01  Adding folder to ontology catalog: D:\Awork\01-paper\00-2025\Ontology-DLGen-LLM-Paper-Work\Review-Revision\2ndReview\Semantic-DLGen\SemDLGen-OWL-SWRL
-   INFO  17:20:01  ---------------------------- Starting Catalog Update ---------------------------
-   INFO  17:20:01  Update of group entry Folder Repository, directory=, recursive=true, Auto-Update=true, version=2 started at Tue Jul 22 17:20:01 JST 2025.
-   INFO  17:20:01   Examining: D:\Awork\01-paper\00-2025\Ontology-DLGen-LLM-Paper-Work\Review-Revision\2ndReview\Semantic-DLGen\SemDLGen-OWL-SWRL
-   INFO  17:20:01  Catalog Update Complete
-   INFO  17:20:01  
-   INFO  17:20:01  Imported ontology document http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/DLStructureOntology was resolved to Optional[file:/D:/Awork/01-paper/00-2025/Ontology-DLGen-LLM-Paper-Work/Review-Revision/2ndReview/Semantic-DLGen/SemDLGen-OWL-SWRL/DLStructureOntologies.owl] by the ontology catalog.
-   INFO  17:20:01  Finished loading imported ontology at file:/D:/Awork/01-paper/00-2025/Ontology-DLGen-LLM-Paper-Work/Review-Revision/2ndReview/Semantic-DLGen/SemDLGen-OWL-SWRL/DLStructureOntologies.owl
-   INFO  17:20:01  Imported ontology document http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/DataOntology was resolved to Optional[file:/D:/Awork/01-paper/00-2025/Ontology-DLGen-LLM-Paper-Work/Review-Revision/2ndReview/Semantic-DLGen/SemDLGen-OWL-SWRL/DataOntologies.owl] by the ontology catalog.
-   INFO  17:20:01  Finished loading imported ontology at file:/D:/Awork/01-paper/00-2025/Ontology-DLGen-LLM-Paper-Work/Review-Revision/2ndReview/Semantic-DLGen/SemDLGen-OWL-SWRL/DataOntologies.owl
-   INFO  17:20:01  Imported ontology document http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/PropertyOntology was resolved to Optional[file:/D:/Awork/01-paper/00-2025/Ontology-DLGen-LLM-Paper-Work/Review-Revision/2ndReview/Semantic-DLGen/SemDLGen-OWL-SWRL/PropertyOntologies.owl] by the ontology catalog.
-   INFO  17:20:01  Finished loading imported ontology at file:/D:/Awork/01-paper/00-2025/Ontology-DLGen-LLM-Paper-Work/Review-Revision/2ndReview/Semantic-DLGen/SemDLGen-OWL-SWRL/PropertyOntologies.owl
-   INFO  17:20:01  Imported ontology document http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/TaskDomainOntology was resolved to Optional[file:/D:/Awork/01-paper/00-2025/Ontology-DLGen-LLM-Paper-Work/Review-Revision/2ndReview/Semantic-DLGen/SemDLGen-OWL-SWRL/TaskDomainOntologies.owl] by the ontology catalog.
-   INFO  17:20:01  Finished loading imported ontology at file:/D:/Awork/01-paper/00-2025/Ontology-DLGen-LLM-Paper-Work/Review-Revision/2ndReview/Semantic-DLGen/SemDLGen-OWL-SWRL/TaskDomainOntologies.owl
-   WARN  17:20:01  Illegal redeclarations of entities: reuse of entity http://www.semanticweb.org/incheonpaikoffice/ontologies/2020/8/DataOntology#hasDataFeature in punning not allowed [ObjectProperty: hasDataFeature, AnnotationProperty: hasDataFeature]
-   INFO  17:20:01  Finished loading file:/D:/Awork/01-paper/00-2025/Ontology-DLGen-LLM-Paper-Work/Review-Revision/2ndReview/Semantic-DLGen/SemDLGen-OWL-SWRL/DLG-Top-Ontology.owl
-   INFO  17:20:01  [GitRepo] Git repository detected: D:\Awork\01-paper\00-2025\Ontology-DLGen-LLM-Paper-Work\Review-Revision\2ndReview\Semantic-DLGen\.git
-   INFO  17:20:01  [GitRepo] On branch: main
-   WARN  17:20:01  No OBDA model was loaded because no .obda file exists in the same location as the .owl file
-   INFO  17:20:01  [GitRepo] Git repository detected: D:\Awork\01-paper\00-2025\Ontology-DLGen-LLM-Paper-Work\Review-Revision\2ndReview\Semantic-DLGen\.git
-   INFO  17:20:01  [GitRepo] On branch: main
-   INFO  17:20:01  Loading for ontology and imports closure successfully completed in 467 ms
-   INFO  17:20:01  
-   INFO  17:20:01  [GitRepo] Git repository detected: D:\Awork\01-paper\00-2025\Ontology-DLGen-LLM-Paper-Work\Review-Revision\2ndReview\Semantic-DLGen\.git
-   INFO  17:20:01  [GitRepo] On branch: main
-   INFO  17:20:01  ---------------------------- Disposing of Workspace ----------------------------
-   INFO  17:20:01  Saved tab state for 'DL Query' tab
-   INFO  17:20:01  Saved tab state for 'Individual Hierarchy Tab' tab
-   INFO  17:20:01  Saved tab state for 'Individuals by class' tab
-   INFO  17:20:01  Saved tab state for 'Active ontology' tab
-   INFO  17:20:01  Saved tab state for 'Entities' tab
-   INFO  17:20:01  Saved workspace
-   INFO  17:20:01  Disposed of 'DL Query' tab
-   INFO  17:20:01  Disposed of 'Individual Hierarchy Tab' tab
-   INFO  17:20:01  Disposed of 'Individuals by class' tab
-   INFO  17:20:01  Disposed of 'Active ontology' tab
-   INFO  17:20:01  Disposed of 'Entities' tab
-   INFO  17:20:01  Disposed of workspace
-   INFO  17:20:01  
-   INFO  17:20:02  [GitRepo] Git repository detected: D:\Awork\01-paper\00-2025\Ontology-DLGen-LLM-Paper-Work\Review-Revision\2ndReview\Semantic-DLGen\.git
-   INFO  17:20:02  [GitRepo] On branch: main
-   INFO  17:20:26  [GitRepo] Git repository detected: D:\Awork\01-paper\00-2025\Ontology-DLGen-LLM-Paper-Work\Review-Revision\2ndReview\Semantic-DLGen\.git
-   INFO  17:20:26  [GitRepo] On branch: main
-   WARN  17:20:53  Extension point not defined: SWRLBuiltInLibraryFactoryPlugin@org.protege.editor.owl
-   INFO  17:21:52  [GitRepo] Git repository detected: D:\Awork\01-paper\00-2025\Ontology-DLGen-LLM-Paper-Work\Review-Revision\2ndReview\Semantic-DLGen\.git
-   INFO  17:21:52  [GitRepo] On branch: main
-   INFO  17:22:23  [GitRepo] Git repository detected: D:\Awork\01-paper\00-2025\Ontology-DLGen-LLM-Paper-Work\Review-Revision\2ndReview\Semantic-DLGen\.git
-   INFO  17:22:23  [GitRepo] On branch: main
-   INFO  17:26:09  [GitRepo] Git repository detected: D:\Awork\01-paper\00-2025\Ontology-DLGen-LLM-Paper-Work\Review-Revision\2ndReview\Semantic-DLGen\.git
-   INFO  17:26:09  [GitRepo] On branch: main
-   INFO  17:26:33  [GitRepo] Git repository detected: D:\Awork\01-paper\00-2025\Ontology-DLGen-LLM-Paper-Work\Review-Revision\2ndReview\Semantic-DLGen\.git
-   INFO  17:26:33  [GitRepo] On branch: main
-   INFO  17:26:58  [GitRepo] Git repository detected: D:\Awork\01-paper\00-2025\Ontology-DLGen-LLM-Paper-Work\Review-Revision\2ndReview\Semantic-DLGen\.git
-   INFO  17:26:58  [GitRepo] On branch: main
-   INFO  17:27:57  [GitRepo] Git repository detected: D:\Awork\01-paper\00-2025\Ontology-DLGen-LLM-Paper-Work\Review-Revision\2ndReview\Semantic-DLGen\.git
-   INFO  17:27:57  [GitRepo] On branch: main
-   INFO  17:28:36  [GitRepo] Git repository detected: D:\Awork\01-paper\00-2025\Ontology-DLGen-LLM-Paper-Work\Review-Revision\2ndReview\Semantic-DLGen\.git
-   INFO  17:28:36  [GitRepo] On branch: main
-   INFO  17:28:42  REASONER CHANGED
-   INFO  17:29:33  [GitRepo] Git repository detected: D:\Awork\01-paper\00-2025\Ontology-DLGen-LLM-Paper-Work\Review-Revision\2ndReview\Semantic-DLGen\.git
-   INFO  17:29:33  [GitRepo] On branch: main
-   INFO  17:29:38  ------------------------------- Running Reasoner -------------------------------
-   INFO  17:29:38  
-  ERROR  17:29:38  An error occurred during reasoning: A SWRL rule uses a built-in atom, but built-in atoms are not supported yet..
-java.lang.IllegalArgumentException: A SWRL rule uses a built-in atom, but built-in atoms are not supported yet.
-	at org.semanticweb.HermiT.structural.OWLNormalization$RuleNormalizer.visit(OWLNormalization.java:1360) ~[na:na]
-	at uk.ac.manchester.cs.owl.owlapi.SWRLBuiltInAtomImpl.accept(SWRLBuiltInAtomImpl.java:96) ~[na:na]
-	at org.semanticweb.HermiT.structural.OWLNormalization$RuleNormalizer.visit(OWLNormalization.java:1244) ~[na:na]
-	at org.semanticweb.HermiT.structural.OWLNormalization.processAxioms(OWLNormalization.java:185) ~[na:na]
-	at org.semanticweb.HermiT.structural.OWLNormalization.processOntology(OWLNormalization.java:167) ~[na:na]
-	at org.semanticweb.HermiT.structural.OWLClausification.preprocessAndClausify(OWLClausification.java:153) ~[na:na]
-	at org.semanticweb.HermiT.Reasoner.loadOntology(Reasoner.java:211) ~[na:na]
-	at org.semanticweb.HermiT.Reasoner.<init>(Reasoner.java:202) ~[na:na]
-	at org.semanticweb.HermiT.Reasoner.<init>(Reasoner.java:176) ~[na:na]
-	at org.semanticweb.HermiT.ReasonerFactory.createHermiTOWLReasoner(ReasonerFactory.java:51) ~[na:na]
-	at org.semanticweb.HermiT.ReasonerFactory.createReasoner(ReasonerFactory.java:19) ~[na:na]
-	at org.protege.editor.owl.model.inference.ReasonerUtilities.createReasoner(ReasonerUtilities.java:20) ~[na:na]
-	at org.protege.editor.owl.model.inference.OWLReasonerManagerImpl$ClassificationRunner.ensureRunningReasonerInitialized(OWLReasonerManagerImpl.java:428) ~[na:na]
-	at org.protege.editor.owl.model.inference.OWLReasonerManagerImpl$ClassificationRunner.run(OWLReasonerManagerImpl.java:386) ~[na:na]
-	at java.lang.Thread.run(Thread.java:745) ~[na:1.8.0_121]
-   INFO  17:29:50  [GitRepo] Git repository detected: D:\Awork\01-paper\00-2025\Ontology-DLGen-LLM-Paper-Work\Review-Revision\2ndReview\Semantic-DLGen\.git
-   INFO  17:29:50  [GitRepo] On branch: main
-   INFO  17:30:02  [GitRepo] Git repository detected: D:\Awork\01-paper\00-2025\Ontology-DLGen-LLM-Paper-Work\Review-Revision\2ndReview\Semantic-DLGen\.git
-   INFO  17:30:02  [GitRepo] On branch: main
-   INFO  17:32:33  [GitRepo] Git repository detected: D:\Awork\01-paper\00-2025\Ontology-DLGen-LLM-Paper-Work\Review-Revision\2ndReview\Semantic-DLGen\.git
-   INFO  17:32:33  [GitRepo] On branch: main
-   INFO  17:32:40  [GitRepo] Git repository detected: D:\Awork\01-paper\00-2025\Ontology-DLGen-LLM-Paper-Work\Review-Revision\2ndReview\Semantic-DLGen\.git
-   INFO  17:32:40  [GitRepo] On branch: main
-   INFO  17:32:45  [GitRepo] Git repository detected: D:\Awork\01-paper\00-2025\Ontology-DLGen-LLM-Paper-Work\Review-Revision\2ndReview\Semantic-DLGen\.git
-   INFO  17:32:45  [GitRepo] On branch: main
-   INFO  17:32:55  [GitRepo] Git repository detected: D:\Awork\01-paper\00-2025\Ontology-DLGen-LLM-Paper-Work\Review-Revision\2ndReview\Semantic-DLGen\.git
-   INFO  17:32:55  [GitRepo] On branch: main
-   INFO  17:32:57  [GitRepo] Git repository detected: D:\Awork\01-paper\00-2025\Ontology-DLGen-LLM-Paper-Work\Review-Revision\2ndReview\Semantic-DLGen\.git
-   INFO  17:32:57  [GitRepo] On branch: main
-   INFO  17:33:04  [GitRepo] Git repository detected: D:\Awork\01-paper\00-2025\Ontology-DLGen-LLM-Paper-Work\Review-Revision\2ndReview\Semantic-DLGen\.git
-   INFO  17:33:04  [GitRepo] On branch: main
+INFO  17:41:55  ------------------------------- Running Reasoner -------------------------------
+   INFO  17:41:55  Pre-computing inferences:
+   INFO  17:41:55      - class hierarchy
+   INFO  17:41:55      - object property hierarchy
+   INFO  17:41:55      - data property hierarchy
+   INFO  17:41:55      - class assertions
+   INFO  17:41:55      - object property assertions
+   INFO  17:41:55      - same individuals
+   INFO  17:41:55  Ontologies processed in 32 ms by Pellet
+   INFO  17:41:55  
+   INFO  17:41:55  REASONER CHANGED
+   INFO  17:42:11  [GitRepo] Git repository detected: D:\Awork\01-paper\00-2025\Ontology-DLGen-LLM-Paper-Work\Review-Revision\2ndReview\Semantic-DLGen\.git
+   INFO  17:42:11  [GitRepo] On branch: main
+   INFO  17:42:20  REASONER CHANGED
+   INFO  17:42:27  Loading default configuration parameters for class org.semanticweb.elk.reasoner.config.ReasonerConfiguration
+   INFO  17:42:27  [GitRepo] Git repository detected: D:\Awork\01-paper\00-2025\Ontology-DLGen-LLM-Paper-Work\Review-Revision\2ndReview\Semantic-DLGen\.git
+   INFO  17:42:33  [GitRepo] Git repository detected: D:\Awork\01-paper\00-2025\Ontology-DLGen-LLM-Paper-Work\Review-Revision\2ndReview\Semantic-DLGen\.git
+   INFO  17:42:33  [GitRepo] On branch: main
+   INFO  17:42:40  ------------------------------- Running Reasoner -------------------------------
+   INFO  17:42:40  Pre-computing inferences:
+   INFO  17:42:40      - class hierarchy
+   INFO  17:42:40      - object property hierarchy
+   INFO  17:42:40      - data property hierarchy
+   INFO  17:42:40      - class assertions
+   INFO  17:42:40      - object property assertions
+   INFO  17:42:40      - same individuals
+   INFO  17:42:40  Ontologies processed in 10 ms by Pellet
+   INFO  17:42:40  
+   INFO  17:42:40  REASONER CHANGED
+   INFO  17:46:06  [GitRepo] Git repository detected: D:\Awork\01-paper\00-2025\Ontology-DLGen-LLM-Paper-Work\Review-Revision\2ndReview\Semantic-DLGen\.git
+   INFO  17:46:06  [GitRepo] On branch: main
+   INFO  17:46:34  [GitRepo] Git repository detected: D:\Awork\01-paper\00-2025\Ontology-DLGen-LLM-Paper-Work\Review-Revision\2ndReview\Semantic-DLGen\.git
+   INFO  17:46:34  [GitRepo] On branch: main
+   INFO  17:47:24  [GitRepo] Git repository detected: D:\Awork\01-paper\00-2025\Ontology-DLGen-LLM-Paper-Work\Review-Revision\2ndReview\Semantic-DLGen\.git
+   INFO  17:47:24  [GitRepo] On branch: main
+   INFO  17:47:48  REASONER CHANGED
+   INFO  17:47:57  [GitRepo] Git repository detected: D:\Awork\01-paper\00-2025\Ontology-DLGen-LLM-Paper-Work\Review-Revision\2ndReview\Semantic-DLGen\.git
+   INFO  17:47:57  [GitRepo] On branch: main
+   INFO  17:47:59  ------------------------------- Running Reasoner -------------------------------
+   INFO  17:48:00  Pre-computing inferences:
+   INFO  17:48:00      - class hierarchy
+   INFO  17:48:00      - object property hierarchy
+   INFO  17:48:00      - data property hierarchy
+   INFO  17:48:00      - class assertions
+   INFO  17:48:00      - object property assertions
+   INFO  17:48:00      - same individuals
+   INFO  17:48:00  Ontologies processed in 12 ms by Pellet
+   INFO  17:48:00  
+   INFO  17:48:00  REASONER CHANGED
+   INFO  17:48:43  [GitRepo] Git repository detected: D:\Awork\01-paper\00-2025\Ontology-DLGen-LLM-Paper-Work\Review-Revision\2ndReview\Semantic-DLGen\.git
+   INFO  17:48:43  [GitRepo] On branch: main
+   INFO  17:48:56  REASONER CHANGED
+   INFO  17:49:24  [GitRepo] Git repository detected: D:\Awork\01-paper\00-2025\Ontology-DLGen-LLM-Paper-Work\Review-Revision\2ndReview\Semantic-DLGen\.git
+   INFO  17:49:24  [GitRepo] On branch: main
+   INFO  17:56:57  [GitRepo] Git repository detected: D:\Awork\01-paper\00-2025\Ontology-DLGen-LLM-Paper-Work\Review-Revision\2ndReview\Semantic-DLGen\.git
+   INFO  17:56:57  [GitRepo] On branch: main
+   INFO  18:09:25  [GitRepo] Git repository detected: D:\Awork\01-paper\00-2025\Ontology-DLGen-LLM-Paper-Work\Review-Revision\2ndReview\Semantic-DLGen\.git
+   INFO  18:09:25  [GitRepo] On branch: main
+   INFO  18:23:33  [GitRepo] Git repository detected: D:\Awork\01-paper\00-2025\Ontology-DLGen-LLM-Paper-Work\Review-Revision\2ndReview\Semantic-DLGen\.git
+   INFO  18:23:33  [GitRepo] On branch: main
+   INFO  13:49:07  [GitRepo] Git repository detected: D:\Awork\01-paper\00-2025\Ontology-DLGen-LLM-Paper-Work\Review-Revision\2ndReview\Semantic-DLGen\.git
+   INFO  13:49:07  [GitRepo] On branch: main
+   INFO  13:49:09  [GitRepo] Git repository detected: D:\Awork\01-paper\00-2025\Ontology-DLGen-LLM-Paper-Work\Review-Revision\2ndReview\Semantic-DLGen\.git
+   INFO  13:49:09  [GitRepo] On branch: main
