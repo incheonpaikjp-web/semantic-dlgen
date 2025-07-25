@@ -1,4 +1,4 @@
-INFO  17:41:55  ------------------------------- Running Reasoner -------------------------------
+   INFO  17:41:55  ------------------------------- Running Reasoner -------------------------------
    INFO  17:41:55  Pre-computing inferences:
    INFO  17:41:55      - class hierarchy
    INFO  17:41:55      - object property hierarchy
